@@ -14,8 +14,8 @@ import java.io.Serializable;
 @Data
 @Component
 @Configuration
-@ConfigurationProperties(prefix = "sl.swagger")
-@ConditionalOnProperty(prefix = "sl.swagger",value = "package-path")
+@ConfigurationProperties(prefix = "qe.swagger")
+@ConditionalOnProperty(prefix = "qe.swagger",value = "package-path")
 public class SwaggerConfigProperties implements Serializable {
 
     public String packagePath;

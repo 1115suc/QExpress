@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
  * 如果需要通过Feign将用户信息向下游微服务传递，需要在配置文件中设置：sl.feign.user = true
  */
 @Component
-@ConditionalOnProperty(prefix = "sl.feign", value = "user")
+@ConditionalOnProperty(prefix = "qe.feign", value = "user")
 public class UserFeignRequestInterceptor implements RequestInterceptor {
 
     @Override
@@ -20,6 +20,6 @@ public class UserFeignRequestInterceptor implements RequestInterceptor {
         //将userInfo放到feign请求头中，向下游的服务传递
         String userInfo = Base64.encode(JSONUtil.toJsonStr(UserThreadLocal.get()));
         template.header("userInfo", userInfo);
-        template.header("X-Request-From", "sl-express-gateway");
+        template.header("X-Request-From", "QExpress-gateway");
     }
 }

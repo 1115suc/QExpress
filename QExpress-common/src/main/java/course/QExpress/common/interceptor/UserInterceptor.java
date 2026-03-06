@@ -35,7 +35,7 @@ public class UserInterceptor implements HandlerInterceptor {
         }
 
         String from = request.getHeader("X-Request-From");
-        if (!StrUtil.equals(from, "sl-express-gateway")) {
+        if (!StrUtil.equals(from, "QExpress-gateway")) {
             response.setStatus(403);
             return false;
         }
