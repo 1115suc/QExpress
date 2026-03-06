@@ -18,4 +18,4 @@ role:
 
 qe:
   jwt:
-    user-secret-key: sl
+    user-secret-key: qe

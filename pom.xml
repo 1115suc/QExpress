@@ -13,6 +13,7 @@
         <module>QExpress-common</module>
         <module>QExpress-gateway</module>
         <module>QExpress-mq</module>
+        <module>QExpress-trade</module>
     </modules>
     <packaging>pom</packaging>
 

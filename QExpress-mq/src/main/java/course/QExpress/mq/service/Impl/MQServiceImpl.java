@@ -27,7 +27,7 @@ import javax.annotation.Resource;
 @Slf4j
 @Service
 //设置初始化条件，只有在配置文件中设置sl.mq.enable=true才能触发
-@ConditionalOnProperty(prefix = "sl.mq", value = "enable")
+@ConditionalOnProperty(prefix = "qe.mq", value = "enable")
 public class MQServiceImpl implements MQService {
 
     @Resource
