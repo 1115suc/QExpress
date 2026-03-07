@@ -1,0 +1,33 @@
+# MySQL 数据库配置
+jdbc:
+  url: jdbc:mysql://192.168.150.128:3306/qe_base?useUnicode=true&characterEncoding=utf8&autoReconnect=true&allowMultiQueries=true&useSSL=false
+  username: root
+  password: 24364726
+
+# XXL-Job 执行器配置
+xxl:
+  job:
+    executor:
+      appname: QExpress-ms-base
+
+# 认证账户配置
+qe:
+  auth:
+    account: admin
+    password: 123456
+
+# Redis 配置
+redis:
+  host: 192.168.150.128
+  port: 6379
+  password:
+
+# RabbitMQ 配置
+rabbitmq:
+  exchange: itcast-auth-user
+  queue: qe.queue.auth.user
+
+# 角色配置
+role:
+  courier: 989559057641637825
+  driver: 989559028277315009
