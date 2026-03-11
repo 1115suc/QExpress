@@ -1,9 +1,11 @@
 package course.QExpress.ms.base.service.truck.impl;
 
 import cn.hutool.core.util.StrUtil;
+import com.baomidou.mybatisplus.core.toolkit.CollectionUtils;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.baomidou.mybatisplus.extension.toolkit.SimpleQuery;
+import course.QExpress.common.exception.QEException;
 import course.QExpress.common.util.DateUtils;
 import course.QExpress.ms.base.domain.enums.TruckPlanScheduleStatusEnum;
 import course.QExpress.ms.base.domain.enums.TruckPlanStatusEnum;
@@ -18,6 +20,7 @@ import course.QExpress.ms.base.service.truck.TruckPlanCreateService;
 import course.QExpress.ms.base.service.truck.TruckTripsService;
 import course.QExpress.ms.base.service.user.TruckDriverService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
@@ -59,7 +62,7 @@ public class TruckPlanCreateServiceImpl extends ServiceImpl<TruckPlanMapper, Tru
         List<Long> driverIds = truckDriverEntities.stream().map(TruckDriverEntity::getUserId).collect(Collectors.toList());
         List<Long> workingDrivers = workSchedulingService.getWorkingDrivers(driverIds, planDepartureTime, planArrivalTime);
         if (workingDrivers.size() < 2) {
-            throw new SLException("车辆至少配置俩名上班的司机才能执行运输任务");
+            throw new QEException("车辆至少配置俩名上班的司机才能执行运输任务");
         }
         // 设置司机
         truckPlanEntity.setDriverIds(StrUtil.join(",", workingDrivers));

@@ -15,6 +15,7 @@
         <module>QExpress-mq</module>
         <module>QExpress-trade</module>
         <module>QExpress-base</module>
+        <module>QExpress-transport</module>
     </modules>
     <packaging>pom</packaging>
 

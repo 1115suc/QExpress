@@ -1,0 +1,759 @@
+CREATE (北京市转运中心:OLT {bid: 8001, name: "北京市转运中心", address: "北京市转运中心", location : point({latitude:39.904179, longitude:116.407387})})
+CREATE (上海市转运中心:OLT {bid: 8002, name: "上海市转运中心", address: "上海市转运中心", location : point({latitude:31.230525, longitude:121.473667})})
+CREATE (南京市转运中心:OLT {bid: 8003, name: "南京市转运中心", address: "南京市转运中心", location : point({latitude:32.059344, longitude:118.796624})})
+CREATE (太原市转运中心:OLT {bid: 8004, name: "太原市转运中心", address: "太原市转运中心", location : point({latitude:37.870451, longitude:112.549656})})
+CREATE (郑州市转运中心:OLT {bid: 8005, name: "郑州市转运中心", address: "郑州市转运中心", location : point({latitude:34.745551, longitude:113.624321})})
+
+CREATE
+    (北京市转运中心)-[:IN_LINE {cost:10684.9}]->(上海市转运中心),
+    (北京市转运中心)<-[:OUT_LINE {cost:10684.9}]-(上海市转运中心),
+    (北京市转运中心)-[:IN_LINE {cost:8993.1}]->(南京市转运中心),
+    (北京市转运中心)<-[:OUT_LINE {cost:8993.1}]-(南京市转运中心),
+    (南京市转运中心)-[:IN_LINE {cost:2699.4}]->(上海市转运中心),
+    (南京市转运中心)<-[:OUT_LINE {cost:2699.4}]-(上海市转运中心),
+    (太原市转运中心)-[:IN_LINE {cost:3609.7}]->(郑州市转运中心),
+    (太原市转运中心)<-[:OUT_LINE {cost:3609.7}]-(郑州市转运中心),
+    (郑州市转运中心)-[:IN_LINE {cost:5659.7}]->(南京市转运中心),
+    (郑州市转运中心)<-[:OUT_LINE {cost:5659.7}]-(南京市转运中心)
+
+CREATE (昌平区转运中心:TLT {bid: 90001, name: "昌平区转运中心", address: "昌平区转运中心", location : point({latitude:40.220952, longitude:116.231034})})
+CREATE (北京市昌平区永旺:AGENCY {bid: 100360, name: "北京市昌平区永旺", address: "北京市昌平区沙河镇知青路1号天注定后院", phone : "010-82235780", location : point({latitude:40.19424989195398, longitude:116.8120049684332})})
+CREATE
+    (北京市昌平区永旺)-[:IN_LINE {cost:494.8}]->(昌平区转运中心),
+    (北京市昌平区永旺)<-[:OUT_LINE {cost:494.8}]-(昌平区转运中心)
+CREATE (北京市昌平区北京人家:AGENCY {bid: 100259, name: "北京市昌平区北京人家", address: "北京市昌平区回龙观北京人家", phone : "010-53049072,010-53576708", location : point({latitude:40.07913790839514, longitude:116.30492576442997})})
+CREATE
+    (北京市昌平区北京人家)-[:IN_LINE {cost:169.9}]->(昌平区转运中心),
+    (北京市昌平区北京人家)<-[:OUT_LINE {cost:169.9}]-(昌平区转运中心)
+CREATE (北京市昌平区城西:AGENCY {bid: 100112, name: "北京市昌平区城西", address: "北京市昌平区马池口镇上哈路昌平高铁站北200米", phone : "01053049045", location : point({latitude:40.192163310429095, longitude:116.19358492642128})})
+CREATE
+    (北京市昌平区城西)-[:IN_LINE {cost:45.2}]->(昌平区转运中心),
+    (北京市昌平区城西)<-[:OUT_LINE {cost:45.2}]-(昌平区转运中心)
+CREATE (北京市昌平区弘运:AGENCY {bid: 100003, name: "北京市昌平区弘运", address: "良狮路科林之星", phone : "010-21451400,18521851742", location : point({latitude:40.18923860927242, longitude:116.32677444808076})})
+CREATE
+    (北京市昌平区弘运)-[:IN_LINE {cost:88.7}]->(昌平区转运中心),
+    (北京市昌平区弘运)<-[:OUT_LINE {cost:88.7}]-(昌平区转运中心)
+CREATE (北京市昌平区霍营:AGENCY {bid: 100125, name: "北京市昌平区霍营", address: "北京市昌平区东小口镇小辛庄村", phone : "010-53049071,010-53730105", location : point({latitude:40.09241036205713, longitude:116.37548698882789})})
+CREATE
+    (北京市昌平区霍营)-[:IN_LINE {cost:188.6}]->(昌平区转运中心),
+    (北京市昌平区霍营)<-[:OUT_LINE {cost:188.6}]-(昌平区转运中心)
+CREATE (北京市昌平区北七家沙河分部:AGENCY {bid: 15062, name: "北京市昌平区北七家沙河分部", address: "良狮路科林之星", phone : "01053572984", location : point({latitude:40.18923860927242, longitude:116.32677444808076})})
+CREATE
+    (北京市昌平区北七家沙河分部)-[:IN_LINE {cost:88.7}]->(昌平区转运中心),
+    (北京市昌平区北七家沙河分部)<-[:OUT_LINE {cost:88.7}]-(昌平区转运中心)
+CREATE (北京市昌平区小汤山镇:AGENCY {bid: 100843, name: "北京市昌平区小汤山镇", address: "良狮路科林之星院内", phone : "01053572984", location : point({latitude:40.18923860927242, longitude:116.32677444808076})})
+CREATE
+    (北京市昌平区小汤山镇)-[:IN_LINE {cost:88.7}]->(昌平区转运中心),
+    (北京市昌平区小汤山镇)<-[:OUT_LINE {cost:88.7}]-(昌平区转运中心)
+CREATE (北京昌平区马池口镇:AGENCY {bid: 100883, name: "北京昌平区马池口镇", address: "北京市昌平区马池口镇上哈路昌平高铁站北200米", phone : "01053730136", location : point({latitude:40.192163310429095, longitude:116.19358492642128})})
+CREATE
+    (北京昌平区马池口镇)-[:IN_LINE {cost:45.2}]->(昌平区转运中心),
+    (北京昌平区马池口镇)<-[:OUT_LINE {cost:45.2}]-(昌平区转运中心)
+CREATE (北京市昌平区兴寿镇:AGENCY {bid: 100842, name: "北京市昌平区兴寿镇", address: "兴寿村桥头妈妈驿站", phone : "01053572984", location : point({latitude:40.22329830475544, longitude:116.40830053375372})})
+CREATE
+    (北京市昌平区兴寿镇)-[:IN_LINE {cost:150.7}]->(昌平区转运中心),
+    (北京市昌平区兴寿镇)<-[:OUT_LINE {cost:150.7}]-(昌平区转运中心)
+CREATE (北京昌平区流村镇:AGENCY {bid: 100882, name: "北京昌平区流村镇", address: "北京市昌平区马池口镇上哈路昌平高铁站北200米", phone : "01053730136", location : point({latitude:40.192163310429095, longitude:116.19358492642128})})
+CREATE
+    (北京昌平区流村镇)-[:IN_LINE {cost:45.2}]->(昌平区转运中心),
+    (北京昌平区流村镇)<-[:OUT_LINE {cost:45.2}]-(昌平区转运中心)
+CREATE (北京昌平区阳坊镇:AGENCY {bid: 100886, name: "北京昌平区阳坊镇", address: "北京市昌平区马池口镇上哈路昌平高铁站北200米", phone : "01053730136", location : point({latitude:40.192163310429095, longitude:116.19358492642128})})
+CREATE
+    (北京昌平区阳坊镇)-[:IN_LINE {cost:45.2}]->(昌平区转运中心),
+    (北京昌平区阳坊镇)<-[:OUT_LINE {cost:45.2}]-(昌平区转运中心)
+CREATE (北京市昌平城区白浮村:AGENCY {bid: 10003, name: "北京市昌平城区白浮村", address: "北京市昌平区马池口镇上哈路昌平高铁站北200米", phone : "01053730136", location : point({latitude:40.192163310429095, longitude:116.19358492642128})})
+CREATE
+    (北京市昌平城区白浮村)-[:IN_LINE {cost:45.2}]->(昌平区转运中心),
+    (北京市昌平城区白浮村)<-[:OUT_LINE {cost:45.2}]-(昌平区转运中心)
+CREATE (北京市昌平区郝庄分部:AGENCY {bid: 10007, name: "北京市昌平区郝庄分部", address: "郝庄家园", phone : "13241888986", location : point({latitude:40.22059700066285, longitude:116.21127801429272})})
+CREATE
+    (北京市昌平区郝庄分部)-[:IN_LINE {cost:16.8}]->(昌平区转运中心),
+    (北京市昌平区郝庄分部)<-[:OUT_LINE {cost:16.8}]-(昌平区转运中心)
+CREATE (北京昌平区十三陵镇:AGENCY {bid: 100801, name: "北京昌平区十三陵镇", address: "箭头村", phone : "18610213106", location : point({latitude:40.24396803902451, longitude:116.21116579646787})})
+CREATE
+    (北京昌平区十三陵镇)-[:IN_LINE {cost:30.7}]->(昌平区转运中心),
+    (北京昌平区十三陵镇)<-[:OUT_LINE {cost:30.7}]-(昌平区转运中心)
+CREATE (北京昌平区崔村镇:AGENCY {bid: 100881, name: "北京昌平区崔村镇", address: "大新峰", phone : "17611768777", location : point({latitude:40.203256966641874, longitude:116.35198958094354})})
+CREATE
+    (北京昌平区崔村镇)-[:IN_LINE {cost:104.7}]->(昌平区转运中心),
+    (北京昌平区崔村镇)<-[:OUT_LINE {cost:104.7}]-(昌平区转运中心)
+CREATE (北京市昌平区南邵镇:AGENCY {bid: 100885, name: "北京市昌平区南邵镇", address: "北京市昌平区兴昌路2号", phone : "13301291892", location : point({latitude:40.20660842571375, longitude:116.30372006587534})})
+CREATE
+    (北京市昌平区南邵镇)-[:IN_LINE {cost:63.8}]->(昌平区转运中心),
+    (北京市昌平区南邵镇)<-[:OUT_LINE {cost:63.8}]-(昌平区转运中心)
+CREATE (北京市昌平城区百泉庄:AGENCY {bid: 10009, name: "北京市昌平城区百泉庄", address: "北京市昌平区马池口镇上哈路昌平高铁站北200米", phone : "01053730136", location : point({latitude:40.192163310429095, longitude:116.19358492642128})})
+CREATE
+    (北京市昌平城区百泉庄)-[:IN_LINE {cost:45.2}]->(昌平区转运中心),
+    (北京市昌平城区百泉庄)<-[:OUT_LINE {cost:45.2}]-(昌平区转运中心)
+CREATE (北京市昌平新区:AGENCY {bid: 100203, name: "北京市昌平新区", address: "邓庄路西10号", phone : "010-53049048", location : point({latitude:40.212810361423855, longitude:116.25462968651149})})
+CREATE
+    (北京市昌平新区)-[:IN_LINE {cost:22.0}]->(昌平区转运中心),
+    (北京市昌平新区)<-[:OUT_LINE {cost:22.0}]-(昌平区转运中心)
+CREATE (北京市昌平区新龙城:AGENCY {bid: 100260, name: "北京市昌平区新龙城", address: "龙跃苑四区3号楼底商", phone : "010-53049073,010-53576707", location : point({latitude:40.07544443596149, longitude:116.3470535709328})})
+CREATE
+    (北京市昌平区新龙城)-[:IN_LINE {cost:189.7}]->(昌平区转运中心),
+    (北京市昌平区新龙城)<-[:OUT_LINE {cost:189.7}]-(昌平区转运中心)
+CREATE (北京市昌平区定泗路:AGENCY {bid: 100280, name: "北京市昌平区定泗路", address: "北七家镇定泗路苍龙街交叉口", phone : "010-86392987", location : point({latitude:40.11765281246394, longitude:116.37212849638287})})
+CREATE
+    (北京市昌平区定泗路)-[:IN_LINE {cost:166.2}]->(昌平区转运中心),
+    (北京市昌平区定泗路)<-[:OUT_LINE {cost:166.2}]-(昌平区转运中心)
+CREATE (北京市昌平区北七家松兰堡分部:AGENCY {bid: 16001, name: "北京市昌平区北七家松兰堡分部", address: "良狮路科林之星", phone : "01053572984", location : point({latitude:40.18923860927242, longitude:116.32677444808076})})
+CREATE
+    (北京市昌平区北七家松兰堡分部)-[:IN_LINE {cost:88.7}]->(昌平区转运中心),
+    (北京市昌平区北七家松兰堡分部)<-[:OUT_LINE {cost:88.7}]-(昌平区转运中心)
+CREATE (北京市昌平区天通苑:AGENCY {bid: 100004, name: "北京市昌平区天通苑", address: "燕丹村国家电网东100米牛场", phone : "010-86483817", location : point({latitude:40.08603130993877, longitude:116.44715258146881})})
+CREATE
+    (北京市昌平区天通苑)-[:IN_LINE {cost:237.4}]->(昌平区转运中心),
+    (北京市昌平区天通苑)<-[:OUT_LINE {cost:237.4}]-(昌平区转运中心)
+CREATE (北京市昌平城区吉利大学:AGENCY {bid: 10012, name: "北京市昌平城区吉利大学", address: "北京市昌平区马池口镇上哈路昌平高铁站北200米", phone : "01053730136", location : point({latitude:40.192163310429095, longitude:116.19358492642128})})
+CREATE
+    (北京市昌平城区吉利大学)-[:IN_LINE {cost:45.2}]->(昌平区转运中心),
+    (北京市昌平城区吉利大学)<-[:OUT_LINE {cost:45.2}]-(昌平区转运中心)
+CREATE (北京市昌平区南口:AGENCY {bid: 10002, name: "北京市昌平区南口", address: "北京市昌平区马池口镇上哈路昌平高铁站北200米", phone : "01053730136", location : point({latitude:40.192163310429095, longitude:116.19358492642128})})
+CREATE
+    (北京市昌平区南口)-[:IN_LINE {cost:45.2}]->(昌平区转运中心),
+    (北京市昌平区南口)<-[:OUT_LINE {cost:45.2}]-(昌平区转运中心)
+CREATE (北京昌平区南口镇:AGENCY {bid: 100884, name: "北京昌平区南口镇", address: "北京市昌平区马池口镇上哈路昌平高铁站北200米", phone : "01053730136", location : point({latitude:40.192163310429095, longitude:116.19358492642128})})
+CREATE
+    (北京昌平区南口镇)-[:IN_LINE {cost:45.2}]->(昌平区转运中心),
+    (北京昌平区南口镇)<-[:OUT_LINE {cost:45.2}]-(昌平区转运中心)
+CREATE (北京市昌平城区南口镇化工大学:AGENCY {bid: 10008, name: "北京市昌平城区南口镇化工大学", address: "北京市昌平区马池口镇上哈路昌平高铁站北200米", phone : "01053730136", location : point({latitude:40.192163310429095, longitude:116.19358492642128})})
+CREATE
+    (北京市昌平城区南口镇化工大学)-[:IN_LINE {cost:45.2}]->(昌平区转运中心),
+    (北京市昌平城区南口镇化工大学)<-[:OUT_LINE {cost:45.2}]-(昌平区转运中心)
+CREATE (北京市昌平城区楼自庄:AGENCY {bid: 10011, name: "北京市昌平城区楼自庄", address: "北京市昌平区马池口镇上哈路昌平高铁站北200米", phone : "01053730136", location : point({latitude:40.192163310429095, longitude:116.19358492642128})})
+CREATE
+    (北京市昌平城区楼自庄)-[:IN_LINE {cost:45.2}]->(昌平区转运中心),
+    (北京市昌平城区楼自庄)<-[:OUT_LINE {cost:45.2}]-(昌平区转运中心)
+CREATE (海淀区转运中心:TLT {bid: 90002, name: "海淀区转运中心", address: "海淀区转运中心", location : point({latitude:39.959893, longitude:116.2977})})
+CREATE (北京市海淀区小营:AGENCY {bid: 100347, name: "北京市海淀区小营", address: "北京市昌平区回龙观街道金燕龙大厦停车场", phone : "010-86483817,010-86483817,010-86483817", location : point({latitude:40.06177798692319, longitude:116.32706587559049})})
+CREATE
+    (北京市海淀区小营)-[:IN_LINE {cost:116.1}]->(海淀区转运中心),
+    (北京市海淀区小营)<-[:OUT_LINE {cost:116.1}]-(海淀区转运中心)
+CREATE (北京市海淀区万泉河:AGENCY {bid: 100227, name: "北京市海淀区万泉河", address: "北京市海淀区四季青镇杏石口路47号院", phone : "18521852356", location : point({latitude:39.94882822425318, longitude:116.25707017441161})})
+CREATE
+    (北京市海淀区万泉河)-[:IN_LINE {cost:36.8}]->(海淀区转运中心),
+    (北京市海淀区万泉河)<-[:OUT_LINE {cost:36.8}]-(海淀区转运中心)
+CREATE (北京市海淀区国兴:AGENCY {bid: 100207, name: "北京市海淀区国兴", address: "北京市海淀区西四环北路158号慧科大厦北侧西郊粮库院内23号", phone : "18521850181,0311-66147596", location : point({latitude:39.93353431035777, longitude:116.27535725366342})})
+CREATE
+    (北京市海淀区国兴)-[:IN_LINE {cost:35.0}]->(海淀区转运中心),
+    (北京市海淀区国兴)<-[:OUT_LINE {cost:35.0}]-(海淀区转运中心)
+CREATE (北京市海淀区新永丰:AGENCY {bid: 100341, name: "北京市海淀区新永丰", address: "上庄镇常乐村7号", phone : "18511009255", location : point({latitude:40.09755095926017, longitude:116.1961882512207})})
+CREATE
+    (北京市海淀区新永丰)-[:IN_LINE {cost:176.0}]->(海淀区转运中心),
+    (北京市海淀区新永丰)<-[:OUT_LINE {cost:176.0}]-(海淀区转运中心)
+CREATE (北京市海淀区香山公园:AGENCY {bid: 100338, name: "北京市海淀区香山公园", address: "香山路正蓝旗8号", phone : "18515839072,18515839072,18515839072", location : point({latitude:39.99791332151727, longitude:116.22584513121376})})
+CREATE
+    (北京市海淀区香山公园)-[:IN_LINE {cost:74.5}]->(海淀区转运中心),
+    (北京市海淀区香山公园)<-[:OUT_LINE {cost:74.5}]-(海淀区转运中心)
+CREATE (北京市海淀区牡丹园:AGENCY {bid: 100361, name: "北京市海淀区牡丹园", address: "北京市海淀区明光西路快递大院", phone : "18521850957", location : point({latitude:39.96370044686215, longitude:116.34590548158424})})
+CREATE
+    (北京市海淀区牡丹园)-[:IN_LINE {cost:41.3}]->(海淀区转运中心),
+    (北京市海淀区牡丹园)<-[:OUT_LINE {cost:41.3}]-(海淀区转运中心)
+CREATE (北京市海淀区锦绣大地:AGENCY {bid: 100183, name: "北京市海淀区锦绣大地", address: "田村北路华远逸墅后面车队大院", phone : "010-86483819", location : point({latitude:39.9343203380909, longitude:116.23831916520759})})
+CREATE
+    (北京市海淀区锦绣大地)-[:IN_LINE {cost:58.1}]->(海淀区转运中心),
+    (北京市海淀区锦绣大地)<-[:OUT_LINE {cost:58.1}]-(海淀区转运中心)
+CREATE (北京市海淀区学清路:AGENCY {bid: 100148, name: "北京市海淀区学清路", address: "河北新村20号", phone : "18587067742", location : point({latitude:40.03564131282053, longitude:116.38112271259573})})
+CREATE
+    (北京市海淀区学清路)-[:IN_LINE {cost:110.3}]->(海淀区转运中心),
+    (北京市海淀区学清路)<-[:OUT_LINE {cost:110.3}]-(海淀区转运中心)
+CREATE (北京市海淀区四季青:AGENCY {bid: 100139, name: "北京市海淀区四季青", address: "杏石口路47号院四季青圆通", phone : "17710331586,010-53049064", location : point({latitude:39.94748677634977, longitude:116.27626398578653})})
+CREATE
+    (北京市海淀区四季青)-[:IN_LINE {cost:22.9}]->(海淀区转运中心),
+    (北京市海淀区四季青)<-[:OUT_LINE {cost:22.9}]-(海淀区转运中心)
+CREATE (北京市海淀区苏州街:AGENCY {bid: 100185, name: "北京市海淀区苏州街", address: "北京市海淀区肖家河桥下", phone : "18521853298", location : point({latitude:39.97839064999332, longitude:116.31268987609695})})
+CREATE
+    (北京市海淀区苏州街)-[:IN_LINE {cost:24.2}]->(海淀区转运中心),
+    (北京市海淀区苏州街)<-[:OUT_LINE {cost:24.2}]-(海淀区转运中心)
+CREATE (北京市海淀区苏家坨:AGENCY {bid: 100058, name: "北京市海淀区苏家坨", address: "海淀区苏家坨", phone : "010-86392984,010-86392984", location : point({latitude:40.079900241218084, longitude:116.15779956450412})})
+CREATE
+    (北京市海淀区苏家坨)-[:IN_LINE {cost:179.1}]->(海淀区转运中心),
+    (北京市海淀区苏家坨)<-[:OUT_LINE {cost:179.1}]-(海淀区转运中心)
+CREATE (北京市海淀区科贸:AGENCY {bid: 100084, name: "北京市海淀区科贸", address: "二河开甲21号院", phone : "17610166387,010-53807290,18521851038", location : point({latitude:39.99685075251824, longitude:116.26017987248028})})
+CREATE
+    (北京市海淀区科贸)-[:IN_LINE {cost:52.1}]->(海淀区转运中心),
+    (北京市海淀区科贸)<-[:OUT_LINE {cost:52.1}]-(海淀区转运中心)
+CREATE (北京市海淀卓展分部:AGENCY {bid: 17913, name: "北京市海淀卓展分部", address: "西翠路5号今日家园", phone : "15011326532", location : point({latitude:39.901426044528506, longitude:116.2816902349138})})
+CREATE
+    (北京市海淀卓展分部)-[:IN_LINE {cost:66.5}]->(海淀区转运中心),
+    (北京市海淀卓展分部)<-[:OUT_LINE {cost:66.5}]-(海淀区转运中心)
+CREATE (北京市海淀区国图外国语东院分部:AGENCY {bid: 10053, name: "北京市海淀区国图外国语东院分部", address: "北京市海淀区西三环北路2号", location : point({latitude:39.95420488995544, longitude:116.311064032859})})
+CREATE
+    (北京市海淀区国图外国语东院分部)-[:IN_LINE {cost:13.0}]->(海淀区转运中心),
+    (北京市海淀区国图外国语东院分部)<-[:OUT_LINE {cost:13.0}]-(海淀区转运中心)
+CREATE (北京市海淀区复兴路建包仓:AGENCY {bid: 960029, name: "北京市海淀区复兴路建包仓", address: "河北省廊坊市永清县曹家务乡碱铺村南", phone : "13383547001", location : point({latitude:39.41935591986796, longitude:116.47304108157616})})
+CREATE
+    (北京市海淀区复兴路建包仓)-[:IN_LINE {cost:620.2}]->(海淀区转运中心),
+    (北京市海淀区复兴路建包仓)<-[:OUT_LINE {cost:620.2}]-(海淀区转运中心)
+CREATE (北京市海淀区北师大北航分部:AGENCY {bid: 10040, name: "北京市海淀区北师大北航分部", address: "明光村快递大院", phone : "18600625431", location : point({latitude:39.955855493221314, longitude:116.35364842565653})})
+CREATE
+    (北京市海淀区北师大北航分部)-[:IN_LINE {cost:48.0}]->(海淀区转运中心),
+    (北京市海淀区北师大北航分部)<-[:OUT_LINE {cost:48.0}]-(海淀区转运中心)
+CREATE (北京市海淀区国图理工分部:AGENCY {bid: 10049, name: "北京市海淀区国图理工分部", address: "北京市海淀区中关村南大街1号", location : point({latitude:39.96408122584736, longitude:116.32143982755079})})
+CREATE
+    (北京市海淀区国图理工分部)-[:IN_LINE {cost:20.8}]->(海淀区转运中心),
+    (北京市海淀区国图理工分部)<-[:OUT_LINE {cost:20.8}]-(海淀区转运中心)
+CREATE (北京市海淀区国图:AGENCY {bid: 100358, name: "北京市海淀区国图", address: "北京市海淀区四道口明光西路5号快递大院", phone : "18521851362", location : point({latitude:39.958177285374795, longitude:116.34613857802375})})
+CREATE
+    (北京市海淀区国图)-[:IN_LINE {cost:41.4}]->(海淀区转运中心),
+    (北京市海淀区国图)<-[:OUT_LINE {cost:41.4}]-(海淀区转运中心)
+CREATE (北京市海淀区天秀:AGENCY {bid: 100208, name: "北京市海淀区天秀", address: "北京市海淀区黑龙潭路58号", phone : "010-86392987,010-62469461,010-62402431", location : point({latitude:40.04406052029592, longitude:116.25327038482827})})
+CREATE
+    (北京市海淀区天秀)-[:IN_LINE {cost:101.1}]->(海淀区转运中心),
+    (北京市海淀区天秀)<-[:OUT_LINE {cost:101.1}]-(海淀区转运中心)
+CREATE (北京市海淀区上地:AGENCY {bid: 100147, name: "北京市海淀区上地", address: "西北旺镇冷泉村华联超市西150米袁早市大院圆通速递", phone : "010-86483810", location : point({latitude:40.033891809014136, longitude:116.21744257029246})})
+CREATE
+    (北京市海淀区上地)-[:IN_LINE {cost:107.1}]->(海淀区转运中心),
+    (北京市海淀区上地)<-[:OUT_LINE {cost:107.1}]-(海淀区转运中心)
+CREATE (北京市海淀区北师大小西天:AGENCY {bid: 100002, name: "北京市海淀区北师大小西天", address: "明光村快递大院", phone : "18521852231", location : point({latitude:39.955855493221314, longitude:116.35364842565653})})
+CREATE
+    (北京市海淀区北师大小西天)-[:IN_LINE {cost:48.0}]->(海淀区转运中心),
+    (北京市海淀区北师大小西天)<-[:OUT_LINE {cost:48.0}]-(海淀区转运中心)
+CREATE (北京市海淀区复兴路:AGENCY {bid: 100056, name: "北京市海淀区复兴路", address: "北京市海淀区万寿路西翠路5号今日家园", phone : "010-53049075", location : point({latitude:39.901426044528506, longitude:116.2816902349138})})
+CREATE
+    (北京市海淀区复兴路)-[:IN_LINE {cost:66.5}]->(海淀区转运中心),
+    (北京市海淀区复兴路)<-[:OUT_LINE {cost:66.5}]-(海淀区转运中心)
+CREATE (北京市海淀区西三旗:AGENCY {bid: 100036, name: "北京市海淀区西三旗", address: "兰各庄甲8号大院", phone : "010-53049060", location : point({latitude:40.07010478218543, longitude:116.37546078105595})})
+CREATE
+    (北京市海淀区西三旗)-[:IN_LINE {cost:139.5}]->(海淀区转运中心),
+    (北京市海淀区西三旗)<-[:OUT_LINE {cost:139.5}]-(海淀区转运中心)
+CREATE (北京市海淀区皂君庙交大:AGENCY {bid: 100104, name: "北京市海淀区皂君庙交大", address: "交通大学路", phone : "13439852788", location : point({latitude:39.94945758419837, longitude:116.34618969921179})})
+CREATE
+    (北京市海淀区皂君庙交大)-[:IN_LINE {cost:43.0}]->(海淀区转运中心),
+    (北京市海淀区皂君庙交大)<-[:OUT_LINE {cost:43.0}]-(海淀区转运中心)
+CREATE (复兴路圆通上海分仓:AGENCY {bid: 16370, name: "复兴路圆通上海分仓", address: "西翠路5号今日家园", phone : "15011326532", location : point({latitude:39.901426044528506, longitude:116.2816902349138})})
+CREATE
+    (复兴路圆通上海分仓)-[:IN_LINE {cost:66.5}]->(海淀区转运中心),
+    (复兴路圆通上海分仓)<-[:OUT_LINE {cost:66.5}]-(海淀区转运中心)
+CREATE (北京市海淀区清华:AGENCY {bid: 100189, name: "北京市海淀区清华", address: "北京市海淀区二河开39号院园通快递", phone : "010-86483821,010-53576703,01053576703", location : point({latitude:40.01557498581213, longitude:116.28826768766466})})
+CREATE
+    (北京市海淀区清华)-[:IN_LINE {cost:62.5}]->(海淀区转运中心),
+    (北京市海淀区清华)<-[:OUT_LINE {cost:62.5}]-(海淀区转运中心)
+CREATE (北京市海淀区慈寿寺:AGENCY {bid: 100175, name: "北京市海淀区慈寿寺", address: "北京市海淀区杏石口路47号大院", phone : "0311-66147574", location : point({latitude:39.94882822425318, longitude:116.25707017441161})})
+CREATE
+    (北京市海淀区慈寿寺)-[:IN_LINE {cost:36.8}]->(海淀区转运中心),
+    (北京市海淀区慈寿寺)<-[:OUT_LINE {cost:36.8}]-(海淀区转运中心)
+CREATE (北京市海淀区北师大:AGENCY {bid: 100055, name: "北京市海淀区北师大", address: "明光西路快递大院", phone : "010-86392987", location : point({latitude:39.96370044686215, longitude:116.34590548158424})})
+CREATE
+    (北京市海淀区北师大)-[:IN_LINE {cost:41.3}]->(海淀区转运中心),
+    (北京市海淀区北师大)<-[:OUT_LINE {cost:41.3}]-(海淀区转运中心)
+CREATE (北京市海淀区皂君庙:AGENCY {bid: 100079, name: "北京市海淀区皂君庙", address: "学院南路42号便民停车场内", phone : "010-86483819", location : point({latitude:39.95816583597253, longitude:116.35797821139606})})
+CREATE
+    (北京市海淀区皂君庙)-[:IN_LINE {cost:51.5}]->(海淀区转运中心),
+    (北京市海淀区皂君庙)<-[:OUT_LINE {cost:51.5}]-(海淀区转运中心)
+CREATE (北京市海淀区北邮:AGENCY {bid: 10052, name: "北京市海淀区北邮", address: "北京市海淀区西土城路10号", location : point({latitude:39.9624400057128, longitude:116.35672763828674})})
+CREATE
+    (北京市海淀区北邮)-[:IN_LINE {cost:50.4}]->(海淀区转运中心),
+    (北京市海淀区北邮)<-[:OUT_LINE {cost:50.4}]-(海淀区转运中心)
+CREATE (北京市海淀区国图民族大学分部:AGENCY {bid: 10054, name: "北京市海淀区国图民族大学分部", address: "北京市海淀区中关村南大街27号", location : point({latitude:39.94955108399072, longitude:116.32402991163698})})
+CREATE
+    (北京市海淀区国图民族大学分部)-[:IN_LINE {cost:25.2}]->(海淀区转运中心),
+    (北京市海淀区国图民族大学分部)<-[:OUT_LINE {cost:25.2}]-(海淀区转运中心)
+CREATE (北京市海淀区国图舞蹈学院分部:AGENCY {bid: 10055, name: "北京市海淀区国图舞蹈学院分部", address: "北京市海淀区万寿寺路1号", location : point({latitude:39.94632128845131, longitude:116.32038930711484})})
+CREATE
+    (北京市海淀区国图舞蹈学院分部)-[:IN_LINE {cost:24.6}]->(海淀区转运中心),
+    (北京市海淀区国图舞蹈学院分部)<-[:OUT_LINE {cost:24.6}]-(海淀区转运中心)
+CREATE
+    (昌平区转运中心)-[:IN_LINE {cost:383.3}]->(北京市转运中心),
+    (昌平区转运中心)<-[:OUT_LINE {cost:383.3}]-(北京市转运中心),
+    (海淀区转运中心)-[:IN_LINE {cost:112.3}]->(北京市转运中心),
+    (海淀区转运中心)<-[:OUT_LINE {cost:112.3}]-(北京市转运中心)
+CREATE (浦东新区转运中心:TLT {bid: 90003, name: "浦东新区转运中心", address: "浦东新区转运中心", location : point({latitude:31.221461, longitude:121.544346})})
+CREATE (上海市浦东新区南汇:AGENCY {bid: 210057, name: "上海市浦东新区南汇", address: "园春路8号", phone : "18821179169", location : point({latitude:31.035240152911637, longitude:121.73459966751048})})
+CREATE
+    (上海市浦东新区南汇)-[:IN_LINE {cost:275.4}]->(浦东新区转运中心),
+    (上海市浦东新区南汇)<-[:OUT_LINE {cost:275.4}]-(浦东新区转运中心)
+CREATE (上海市浦东新区外高桥:AGENCY {bid: 210069, name: "上海市浦东新区外高桥", address: "赵高公路1628号", phone : "021-38830126", location : point({latitude:31.298325166325338, longitude:121.6392239425238})})
+CREATE
+    (上海市浦东新区外高桥)-[:IN_LINE {cost:124.4}]->(浦东新区转运中心),
+    (上海市浦东新区外高桥)<-[:OUT_LINE {cost:124.4}]-(浦东新区转运中心)
+CREATE (上海市浦东新区塘桥:AGENCY {bid: 210068, name: "上海市浦东新区塘桥", address: "成山路1025号", phone : "021-50903262,021-51090849", location : point({latitude:31.174081834365772, longitude:121.51738138563972})})
+CREATE
+    (上海市浦东新区塘桥)-[:IN_LINE {cost:58.7}]->(浦东新区转运中心),
+    (上海市浦东新区塘桥)<-[:OUT_LINE {cost:58.7}]-(浦东新区转运中心)
+CREATE (上海市浦东新区凌桥镇:AGENCY {bid: 210070, name: "上海市浦东新区凌桥镇", address: "莱阳路2928弄190号a座", phone : "15135573018", location : point({latitude:31.32192377642189, longitude:121.58648710013077})})
+CREATE
+    (上海市浦东新区凌桥镇)-[:IN_LINE {cost:118.8}]->(浦东新区转运中心),
+    (上海市浦东新区凌桥镇)<-[:OUT_LINE {cost:118.8}]-(浦东新区转运中心)
+CREATE (上海市浦东新区临港:AGENCY {bid: 210132, name: "上海市浦东新区临港", address: "渔港路1228号", phone : "021-58078616", location : point({latitude:30.856766634184638, longitude:121.85103401916484})})
+CREATE
+    (上海市浦东新区临港)-[:IN_LINE {cost:500.4}]->(浦东新区转运中心),
+    (上海市浦东新区临港)<-[:OUT_LINE {cost:500.4}]-(浦东新区转运中心)
+CREATE (上海市浦东新区三灶:AGENCY {bid: 210163, name: "上海市浦东新区三灶", address: "上海市浦东新区宣秋路567", phone : "021-20910180", location : point({latitude:31.089822826688046, longitude:121.72191204865713})})
+CREATE
+    (上海市浦东新区三灶)-[:IN_LINE {cost:223.8}]->(浦东新区转运中心),
+    (上海市浦东新区三灶)<-[:OUT_LINE {cost:223.8}]-(浦东新区转运中心)
+CREATE (上海市浦东新区曹路:AGENCY {bid: 210140, name: "上海市浦东新区曹路", address: "庆达路586号", phone : "02131105351", location : point({latitude:31.239720930370186, longitude:121.69750104866772})})
+CREATE
+    (上海市浦东新区曹路)-[:IN_LINE {cost:147.2}]->(浦东新区转运中心),
+    (上海市浦东新区曹路)<-[:OUT_LINE {cost:147.2}]-(浦东新区转运中心)
+CREATE (上海市浦东新区梅园:AGENCY {bid: 210144, name: "上海市浦东新区梅园", address: "崮山路908号院内圆通速递", phone : "021-50812520,16628518868", location : point({latitude:31.23618610169264, longitude:121.56170964179228})})
+CREATE
+    (上海市浦东新区梅园)-[:IN_LINE {cost:23.3}]->(浦东新区转运中心),
+    (上海市浦东新区梅园)<-[:OUT_LINE {cost:23.3}]-(浦东新区转运中心)
+CREATE (上海市浦东新区孙桥:AGENCY {bid: 210403, name: "上海市浦东新区孙桥", address: "孙桥横沔江路388号", phone : "18521101958,18521101958,18521101958", location : point({latitude:31.197610026922295, longitude:121.61122877081318})})
+CREATE
+    (上海市浦东新区孙桥)-[:IN_LINE {cost:69.0}]->(浦东新区转运中心),
+    (上海市浦东新区孙桥)<-[:OUT_LINE {cost:69.0}]-(浦东新区转运中心)
+CREATE (上海市浦东新区新坦瓦:AGENCY {bid: 210452, name: "上海市浦东新区新坦瓦", address: "沪南公路8587", phone : "18132822210", location : point({latitude:31.035315393876346, longitude:121.68374249084275})})
+CREATE
+    (上海市浦东新区新坦瓦)-[:IN_LINE {cost:246.1}]->(浦东新区转运中心),
+    (上海市浦东新区新坦瓦)<-[:OUT_LINE {cost:246.1}]-(浦东新区转运中心)
+CREATE (上海市浦东新区高科:AGENCY {bid: 210472, name: "上海市浦东新区高科", address: "上海上海市浦东新区康桥镇康桥东路268号东门", phone : "18521101951", location : point({latitude:31.151562930336755, longitude:121.6009396224378})})
+CREATE
+    (上海市浦东新区高科)-[:IN_LINE {cost:94.7}]->(浦东新区转运中心),
+    (上海市浦东新区高科)<-[:OUT_LINE {cost:94.7}]-(浦东新区转运中心)
+CREATE (上海市浦东新区博兴栖山路分部:AGENCY {bid: 210232, name: "上海市浦东新区博兴栖山路分部", address: "金桥路711号", phone : "18521102217", location : point({latitude:31.26054954321715, longitude:121.57715308527328})})
+CREATE
+    (上海市浦东新区博兴栖山路分部)-[:IN_LINE {cost:53.6}]->(浦东新区转运中心),
+    (上海市浦东新区博兴栖山路分部)<-[:OUT_LINE {cost:53.6}]-(浦东新区转运中心)
+CREATE (上海市浦东新区繁荣:AGENCY {bid: 210410, name: "上海市浦东新区繁荣", address: "周祝公路45号", phone : "02133752060", location : point({latitude:31.100394825323626, longitude:121.58640037252549})})
+CREATE
+    (上海市浦东新区繁荣)-[:IN_LINE {cost:140.6}]->(浦东新区转运中心),
+    (上海市浦东新区繁荣)<-[:OUT_LINE {cost:140.6}]-(浦东新区转运中心)
+CREATE (上海市浦东新区港城:AGENCY {bid: 210454, name: "上海市浦东新区港城", address: "上海市浦东新区三三公路4829号", location : point({latitude:30.975531399630725, longitude:121.87331808639678})})
+CREATE
+    (上海市浦东新区港城)-[:IN_LINE {cost:416.3}]->(浦东新区转运中心),
+    (上海市浦东新区港城)<-[:OUT_LINE {cost:416.3}]-(浦东新区转运中心)
+CREATE (上海市浦东新区金杨:AGENCY {bid: 210474, name: "上海市浦东新区金杨", address: "上海市浦东新区金桥路1728号", location : point({latitude:31.249463800521717, longitude:121.59047482102707})})
+CREATE
+    (上海市浦东新区金杨)-[:IN_LINE {cost:53.8}]->(浦东新区转运中心),
+    (上海市浦东新区金杨)<-[:OUT_LINE {cost:53.8}]-(浦东新区转运中心)
+CREATE (上海市浦东新区黄楼:AGENCY {bid: 210411, name: "上海市浦东新区黄楼", address: "浦东新区合庆镇华夏东路4299弄98号", phone : "15317907703", location : point({latitude:31.20719393426825, longitude:121.7400837467431})})
+CREATE
+    (上海市浦东新区黄楼)-[:IN_LINE {cost:187.0}]->(浦东新区转运中心),
+    (上海市浦东新区黄楼)<-[:OUT_LINE {cost:187.0}]-(浦东新区转运中心)
+CREATE (上海市浦东新区外高桥保税仓分部:AGENCY {bid: 210214, name: "上海市浦东新区外高桥保税仓分部", address: "赵高公路1628号", phone : "021-38830126", location : point({latitude:31.298325166325338, longitude:121.6392239425238})})
+CREATE
+    (上海市浦东新区外高桥保税仓分部)-[:IN_LINE {cost:124.4}]->(浦东新区转运中心),
+    (上海市浦东新区外高桥保税仓分部)<-[:OUT_LINE {cost:124.4}]-(浦东新区转运中心)
+CREATE (上海市浦东新区泾华:AGENCY {bid: 210270, name: "上海市浦东新区泾华", address: "浦东大道1732号", phone : "18521102372", location : point({latitude:31.245526695650568, longitude:121.5444811386235})})
+CREATE
+    (上海市浦东新区泾华)-[:IN_LINE {cost:26.8}]->(浦东新区转运中心),
+    (上海市浦东新区泾华)<-[:OUT_LINE {cost:26.8}]-(浦东新区转运中心)
+CREATE (上海市浦东新区万邦:AGENCY {bid: 210239, name: "上海市浦东新区万邦", address: "上海市浦东新区北蔡镇新陈路1017号7号仓库", phone : "021-68936018,021-68936018,021-68936018", location : point({latitude:31.182698471917117, longitude:121.57755911176552})})
+CREATE
+    (上海市浦东新区万邦)-[:IN_LINE {cost:53.5}]->(浦东新区转运中心),
+    (上海市浦东新区万邦)<-[:OUT_LINE {cost:53.5}]-(浦东新区转运中心)
+CREATE (上海市浦东新区凌环:AGENCY {bid: 210369, name: "上海市浦东新区凌环", address: "凌桥镇江东路1648号", phone : "60555343", location : point({latitude:31.36363464211616, longitude:121.54836405791724})})
+CREATE
+    (上海市浦东新区凌环)-[:IN_LINE {cost:158.3}]->(浦东新区转运中心),
+    (上海市浦东新区凌环)<-[:OUT_LINE {cost:158.3}]-(浦东新区转运中心)
+CREATE (上海市浦东新区严桥:AGENCY {bid: 210399, name: "上海市浦东新区严桥", address: "新陈路780号", phone : "18521101901", location : point({latitude:31.181291790283062, longitude:121.57277657356632})})
+CREATE
+    (上海市浦东新区严桥)-[:IN_LINE {cost:52.3}]->(浦东新区转运中心),
+    (上海市浦东新区严桥)<-[:OUT_LINE {cost:52.3}]-(浦东新区转运中心)
+CREATE (上海市浦东新区万邦龙阳路分部:AGENCY {bid: 21081, name: "上海市浦东新区万邦龙阳路分部", address: "新陈路1017号7号仓库", phone : "021-68936018,021-68936018,021-68936018", location : point({latitude:31.182698471917117, longitude:121.57755911176552})})
+CREATE
+    (上海市浦东新区万邦龙阳路分部)-[:IN_LINE {cost:53.5}]->(浦东新区转运中心),
+    (上海市浦东新区万邦龙阳路分部)<-[:OUT_LINE {cost:53.5}]-(浦东新区转运中心)
+CREATE (上海市浦东新区绿川御桥分部:AGENCY {bid: 21215, name: "上海市浦东新区绿川御桥分部", address: "上海市浦东新区康意路406号", location : point({latitude:31.150833384847864, longitude:121.552869819848})})
+CREATE
+    (上海市浦东新区绿川御桥分部)-[:IN_LINE {cost:79.0}]->(浦东新区转运中心),
+    (上海市浦东新区绿川御桥分部)<-[:OUT_LINE {cost:79.0}]-(浦东新区转运中心)
+CREATE (上海市浦东新区合庆:AGENCY {bid: 210010, name: "上海市浦东新区合庆", address: "上海市浦东新区合庆镇庆达路586号", phone : "023-49376750", location : point({latitude:31.239720930370186, longitude:121.69750104866772})})
+CREATE
+    (上海市浦东新区合庆)-[:IN_LINE {cost:147.2}]->(浦东新区转运中心),
+    (上海市浦东新区合庆)<-[:OUT_LINE {cost:147.2}]-(浦东新区转运中心)
+CREATE (上海市浦东新区北蔡:AGENCY {bid: 210062, name: "上海市浦东新区北蔡", address: "新陈路900号", phone : "02168921507", location : point({latitude:31.181957442760638, longitude:121.57570055670685})})
+CREATE
+    (上海市浦东新区北蔡)-[:IN_LINE {cost:53.2}]->(浦东新区转运中心),
+    (上海市浦东新区北蔡)<-[:OUT_LINE {cost:53.2}]-(浦东新区转运中心)
+CREATE (上海市浦东新区金桥:AGENCY {bid: 210065, name: "上海市浦东新区金桥", address: "金港路558号", phone : "18521102449", location : point({latitude:31.250622875497587, longitude:121.61364477038619})})
+CREATE
+    (上海市浦东新区金桥)-[:IN_LINE {cost:73.5}]->(浦东新区转运中心),
+    (上海市浦东新区金桥)<-[:OUT_LINE {cost:73.5}]-(浦东新区转运中心)
+CREATE (上海市浦东新区祝桥:AGENCY {bid: 210058, name: "上海市浦东新区祝桥", address: "盐仓盐北路7号B幢", phone : "021-58098989", location : point({latitude:31.090155192645636, longitude:121.76509916347787})})
+CREATE
+    (上海市浦东新区祝桥)-[:IN_LINE {cost:256.1}]->(浦东新区转运中心),
+    (上海市浦东新区祝桥)<-[:OUT_LINE {cost:256.1}]-(浦东新区转运中心)
+CREATE (上海市浦东新区新东靖:AGENCY {bid: 210102, name: "上海市浦东新区新东靖", address: "赵高公路1578号圆通", phone : "02168882989", location : point({latitude:31.29832691480241, longitude:121.63930120588738})})
+CREATE
+    (上海市浦东新区新东靖)-[:IN_LINE {cost:124.4}]->(浦东新区转运中心),
+    (上海市浦东新区新东靖)<-[:OUT_LINE {cost:124.4}]-(浦东新区转运中心)
+CREATE (上海市浦东机场:AGENCY {bid: 210143, name: "上海市浦东机场", address: "川六公路2091号", phone : "18521103149", location : point({latitude:31.156619055825537, longitude:121.73346542983744})})
+CREATE
+    (上海市浦东机场)-[:IN_LINE {cost:194.0}]->(浦东新区转运中心),
+    (上海市浦东机场)<-[:OUT_LINE {cost:194.0}]-(浦东新区转运中心)
+CREATE (上海市浦东新区周浦:AGENCY {bid: 210127, name: "上海市浦东新区周浦", address: "川周公路3278-8号", phone : "021-68060322", location : point({latitude:31.132409729356993, longitude:121.59815370294322})})
+CREATE
+    (上海市浦东新区周浦)-[:IN_LINE {cost:111.6}]->(浦东新区转运中心),
+    (上海市浦东新区周浦)<-[:OUT_LINE {cost:111.6}]-(浦东新区转运中心)
+CREATE (上海市浦东新区东昌绿地:AGENCY {bid: 210453, name: "上海市浦东新区东昌绿地", address: "浦东南路1475号", phone : "18521813337", location : point({latitude:31.222739316716478, longitude:121.51918385352836})})
+CREATE
+    (上海市浦东新区东昌绿地)-[:IN_LINE {cost:24.0}]->(浦东新区转运中心),
+    (上海市浦东新区东昌绿地)<-[:OUT_LINE {cost:24.0}]-(浦东新区转运中心)
+CREATE (上海市浦东新区秀南:AGENCY {bid: 210462, name: "上海市浦东新区秀南", address: "上海市浦东新区康意路418号", phone : "68069086", location : point({latitude:31.150292992565692, longitude:121.553004975172})})
+CREATE
+    (上海市浦东新区秀南)-[:IN_LINE {cost:79.7}]->(浦东新区转运中心),
+    (上海市浦东新区秀南)<-[:OUT_LINE {cost:79.7}]-(浦东新区转运中心)
+CREATE (上海市浦东新区江镇:AGENCY {bid: 210213, name: "上海市浦东新区江镇", address: "江镇亭塘路与中横港路交叉口", phone : "021-62242050,021-62240080,021-62240082", location : point({latitude:31.172837295012425, longitude:121.75896506327514})})
+CREATE
+    (上海市浦东新区江镇)-[:IN_LINE {cost:211.4}]->(浦东新区转运中心),
+    (上海市浦东新区江镇)<-[:OUT_LINE {cost:211.4}]-(浦东新区转运中心)
+CREATE (上海市浦东新区博兴平度路分部:AGENCY {bid: 210233, name: "上海市浦东新区博兴平度路分部", address: "金桥路1728号", phone : "18521102197", location : point({latitude:31.249463800521717, longitude:121.59047482102707})})
+CREATE
+    (上海市浦东新区博兴平度路分部)-[:IN_LINE {cost:53.8}]->(浦东新区转运中心),
+    (上海市浦东新区博兴平度路分部)<-[:OUT_LINE {cost:53.8}]-(浦东新区转运中心)
+CREATE (上海市浦东新区新世博:AGENCY {bid: 210362, name: "上海市浦东新区新世博", address: "成山路1025号", phone : "02158567669", location : point({latitude:31.174081834365772, longitude:121.51738138563972})})
+CREATE
+    (上海市浦东新区新世博)-[:IN_LINE {cost:58.7}]->(浦东新区转运中心),
+    (上海市浦东新区新世博)<-[:OUT_LINE {cost:58.7}]-(浦东新区转运中心)
+CREATE (上海市浦东新区泥城:AGENCY {bid: 210408, name: "上海市浦东新区泥城", address: "海关临海路38号", phone : "18521100619", location : point({latitude:30.940153586783005, longitude:121.79222961633737})})
+CREATE
+    (上海市浦东新区泥城)-[:IN_LINE {cost:392.3}]->(浦东新区转运中心),
+    (上海市浦东新区泥城)<-[:OUT_LINE {cost:392.3}]-(浦东新区转运中心)
+CREATE (上海市浦东新区黄路:AGENCY {bid: 210460, name: "上海市浦东新区黄路", address: "上海市浦东新区黄家路6号", phone : "021-58123689", location : point({latitude:31.025027786717907, longitude:121.78144296699162})})
+CREATE
+    (上海市浦东新区黄路)-[:IN_LINE {cost:314.4}]->(浦东新区转运中心),
+    (上海市浦东新区黄路)<-[:OUT_LINE {cost:314.4}]-(浦东新区转运中心)
+CREATE (上海市浦东新区航沙:AGENCY {bid: 210470, name: "上海市浦东新区航沙", address: "航川路52号28栋一楼", phone : "13124883555", location : point({latitude:31.031417274326582, longitude:121.60797754702234})})
+CREATE
+    (上海市浦东新区航沙)-[:IN_LINE {cost:220.1}]->(浦东新区转运中心),
+    (上海市浦东新区航沙)<-[:OUT_LINE {cost:220.1}]-(浦东新区转运中心)
+CREATE (上海市浦东新区崮山路:AGENCY {bid: 210445, name: "上海市浦东新区崮山路", address: "崮山路920号", phone : "18521101790", location : point({latitude:31.235818301549436, longitude:121.55979484417546})})
+CREATE
+    (上海市浦东新区崮山路)-[:IN_LINE {cost:21.7}]->(浦东新区转运中心),
+    (上海市浦东新区崮山路)<-[:OUT_LINE {cost:21.7}]-(浦东新区转运中心)
+CREATE (上海市浦东新区博兴胶东路分部:AGENCY {bid: 210230, name: "上海市浦东新区博兴胶东路分部", address: "胶东路683号", phone : "18521102171", location : point({latitude:31.259967601647556, longitude:121.59969258338967})})
+CREATE
+    (上海市浦东新区博兴胶东路分部)-[:IN_LINE {cost:67.9}]->(浦东新区转运中心),
+    (上海市浦东新区博兴胶东路分部)<-[:OUT_LINE {cost:67.9}]-(浦东新区转运中心)
+CREATE (上海市浦东新区博兴:AGENCY {bid: 210211, name: "上海市浦东新区博兴", address: "东陆路1763号", phone : "021-50208063", location : point({latitude:31.264377520385843, longitude:121.60921948821031})})
+CREATE
+    (上海市浦东新区博兴)-[:IN_LINE {cost:78.1}]->(浦东新区转运中心),
+    (上海市浦东新区博兴)<-[:OUT_LINE {cost:78.1}]-(浦东新区转运中心)
+CREATE (上海市浦东新区博兴菏泽路分部:AGENCY {bid: 210229, name: "上海市浦东新区博兴菏泽路分部", address: "菏泽路83号", phone : "18521102150", location : point({latitude:31.272313849012196, longitude:121.59102094377944})})
+CREATE
+    (上海市浦东新区博兴菏泽路分部)-[:IN_LINE {cost:72.0}]->(浦东新区转运中心),
+    (上海市浦东新区博兴菏泽路分部)<-[:OUT_LINE {cost:72.0}]-(浦东新区转运中心)
+CREATE (上海市浦东新区金浜:AGENCY {bid: 210271, name: "上海市浦东新区金浜", address: "栖山路1472号", phone : "021-68681998", location : point({latitude:31.257007233834305, longitude:121.56476188495972})})
+CREATE
+    (上海市浦东新区金浜)-[:IN_LINE {cost:44.1}]->(浦东新区转运中心),
+    (上海市浦东新区金浜)<-[:OUT_LINE {cost:44.1}]-(浦东新区转运中心)
+CREATE (上海市浦东新区绿川:AGENCY {bid: 210380, name: "上海市浦东新区绿川", address: "康意路406号", phone : "18521103440", location : point({latitude:31.150833384847864, longitude:121.552869819848})})
+CREATE
+    (上海市浦东新区绿川)-[:IN_LINE {cost:79.0}]->(浦东新区转运中心),
+    (上海市浦东新区绿川)<-[:OUT_LINE {cost:79.0}]-(浦东新区转运中心)
+CREATE (上海市浦东新区凌兆:AGENCY {bid: 210371, name: "上海市浦东新区凌兆", address: "杨新路199号", phone : "18521813259,18521113141", location : point({latitude:31.162010993957296, longitude:121.49204263907166})})
+CREATE
+    (上海市浦东新区凌兆)-[:IN_LINE {cost:82.8}]->(浦东新区转运中心),
+    (上海市浦东新区凌兆)<-[:OUT_LINE {cost:82.8}]-(浦东新区转运中心)
+CREATE (上海市浦东新区万邦卫行路分部:AGENCY {bid: 21082, name: "上海市浦东新区万邦卫行路分部", address: "新陈路1017号7号仓库", phone : "021-68936018,021-68936018,021-68936018", location : point({latitude:31.182698471917117, longitude:121.57755911176552})})
+CREATE
+    (上海市浦东新区万邦卫行路分部)-[:IN_LINE {cost:53.5}]->(浦东新区转运中心),
+    (上海市浦东新区万邦卫行路分部)<-[:OUT_LINE {cost:53.5}]-(浦东新区转运中心)
+CREATE (上海市浦东新区绿川金茂分部:AGENCY {bid: 21216, name: "上海市浦东新区绿川金茂分部", address: "上海市浦东新区康意路406号", location : point({latitude:31.150833384847864, longitude:121.552869819848})})
+CREATE
+    (上海市浦东新区绿川金茂分部)-[:IN_LINE {cost:79.0}]->(浦东新区转运中心),
+    (上海市浦东新区绿川金茂分部)<-[:OUT_LINE {cost:79.0}]-(浦东新区转运中心)
+CREATE (上海市浦东新区临港保税区分部:AGENCY {bid: 21191, name: "上海市浦东新区临港保税区分部", address: "渔港路1228号", phone : "021-58078616", location : point({latitude:30.856766634184638, longitude:121.85103401916484})})
+CREATE
+    (上海市浦东新区临港保税区分部)-[:IN_LINE {cost:500.4}]->(浦东新区转运中心),
+    (上海市浦东新区临港保税区分部)<-[:OUT_LINE {cost:500.4}]-(浦东新区转运中心)
+CREATE (奉贤区转运中心:TLT {bid: 90004, name: "奉贤区转运中心", address: "奉贤区转运中心", location : point({latitude:30.918406, longitude:121.473945})})
+CREATE (上海市奉贤区东部:AGENCY {bid: 210017, name: "上海市奉贤区东部", address: "上上海市奉贤区洪庙镇洪兰路351", phone : "021-57171717", location : point({latitude:30.917752751719863, longitude:121.67587819184698})})
+CREATE
+    (上海市奉贤区东部)-[:IN_LINE {cost:192.9}]->(奉贤区转运中心),
+    (上海市奉贤区东部)<-[:OUT_LINE {cost:192.9}]-(奉贤区转运中心)
+CREATE (上海市奉贤区齐贤:AGENCY {bid: 210463, name: "上海市奉贤区齐贤", address: "上海上海市奉贤区南桥镇金大公路7939号", location : point({latitude:30.94836307317513, longitude:121.5200200631952})})
+CREATE
+    (上海市奉贤区齐贤)-[:IN_LINE {cost:55.2}]->(奉贤区转运中心),
+    (上海市奉贤区齐贤)<-[:OUT_LINE {cost:55.2}]-(奉贤区转运中心)
+CREATE (上海市奉贤区学府:AGENCY {bid: 210243, name: "上海市奉贤区学府", address: "南华亭东路3号", phone : "17701678000", location : point({latitude:30.840619845630677, longitude:121.49875861225519})})
+CREATE
+    (上海市奉贤区学府)-[:IN_LINE {cost:89.8}]->(奉贤区转运中心),
+    (上海市奉贤区学府)<-[:OUT_LINE {cost:89.8}]-(奉贤区转运中心)
+CREATE (上海市奉贤区海湾:AGENCY {bid: 210471, name: "上海市奉贤区海湾", address: "上海市奉贤区奉炮公路1245号", location : point({latitude:30.845886934253393, longitude:121.51793014882763})})
+CREATE
+    (上海市奉贤区海湾)-[:IN_LINE {cost:91.0}]->(奉贤区转运中心),
+    (上海市奉贤区海湾)<-[:OUT_LINE {cost:91.0}]-(奉贤区转运中心)
+CREATE (上海市奉贤区南桥:AGENCY {bid: 210016, name: "上海市奉贤区南桥", address: "环城西路1398号", phone : "02167190359", location : point({latitude:30.9251163943677, longitude:121.44038361188807})})
+CREATE
+    (上海市奉贤区南桥)-[:IN_LINE {cost:32.9}]->(奉贤区转运中心),
+    (上海市奉贤区南桥)<-[:OUT_LINE {cost:32.9}]-(奉贤区转运中心)
+CREATE (上海市奉贤区青村:AGENCY {bid: 210442, name: "上海市奉贤区青村", address: "姚家村1127号", phone : "021-57566663,021-57566606", location : point({latitude:30.916946897994983, longitude:121.57954144207972})})
+CREATE
+    (上海市奉贤区青村)-[:IN_LINE {cost:100.9}]->(奉贤区转运中心),
+    (上海市奉贤区青村)<-[:OUT_LINE {cost:100.9}]-(奉贤区转运中心)
+CREATE (上海市浦东新区向城路:AGENCY {bid: 210384, name: "上海市浦东新区向城路", address: "上海市奉贤区大叶公路8188号", phone : "021-58165878", location : point({latitude:30.984512702990585, longitude:121.68213597525761})})
+CREATE
+    (上海市浦东新区向城路)-[:IN_LINE {cost:211.9}]->(奉贤区转运中心),
+    (上海市浦东新区向城路)<-[:OUT_LINE {cost:211.9}]-(奉贤区转运中心)
+CREATE (上海市奉贤区南桥齐贤分部:AGENCY {bid: 21057, name: "上海市奉贤区南桥齐贤分部", address: "金大公路7939号", phone : "15801864653", location : point({latitude:30.94836307317513, longitude:121.5200200631952})})
+CREATE
+    (上海市奉贤区南桥齐贤分部)-[:IN_LINE {cost:55.2}]->(奉贤区转运中心),
+    (上海市奉贤区南桥齐贤分部)<-[:OUT_LINE {cost:55.2}]-(奉贤区转运中心)
+CREATE
+    (浦东新区转运中心)-[:IN_LINE {cost:68.0}]->(上海市转运中心),
+    (浦东新区转运中心)<-[:OUT_LINE {cost:68.0}]-(上海市转运中心),
+    (奉贤区转运中心)-[:IN_LINE {cost:347.4}]->(上海市转运中心),
+    (奉贤区转运中心)<-[:OUT_LINE {cost:347.4}]-(上海市转运中心)
+CREATE (玄武区转运中心:TLT {bid: 90004, name: "玄武区转运中心" , location : point({latitude:32.048644, longitude:118.797779})})
+CREATE (江苏省南京市玄武区紫金墨香苑:AGENCY {bid: 25073, name: "江苏省南京市玄武区紫金墨香苑", address: "栖霞区燕尧路100号", phone : "025-58765331,025-83241955,025-83241881", location : point({latitude:32.117016089520305, longitude:118.86319310255513})})
+CREATE
+    (江苏省南京市玄武区紫金墨香苑)-[:IN_LINE {cost:98.0}]->(玄武区转运中心),
+    (江苏省南京市玄武区紫金墨香苑)<-[:OUT_LINE {cost:98.0}]-(玄武区转运中心)
+CREATE (江苏省南京市玄武区长江路:AGENCY {bid: 25023, name: "江苏省南京市玄武区长江路", address: "观音阁10号", phone : "18521133265,18695799166", location : point({latitude:32.04803554410631, longitude:118.79190455263355})})
+CREATE
+    (江苏省南京市玄武区长江路)-[:IN_LINE {cost:5.6}]->(玄武区转运中心),
+    (江苏省南京市玄武区长江路)<-[:OUT_LINE {cost:5.6}]-(玄武区转运中心)
+CREATE (江苏省南京市玄武区花园路:AGENCY {bid: 25076, name: "江苏省南京市玄武区花园路", address: "栖霞区燕尧路100号", phone : "025-58765331,025-83241881,025-83241195", location : point({latitude:32.117016089520305, longitude:118.86319310255513})})
+CREATE
+    (江苏省南京市玄武区花园路)-[:IN_LINE {cost:98.0}]->(玄武区转运中心),
+    (江苏省南京市玄武区花园路)<-[:OUT_LINE {cost:98.0}]-(玄武区转运中心)
+CREATE (江苏省南京市玄武区月苑小区:AGENCY {bid: 25072, name: "江苏省南京市玄武区月苑小区", address: "栖霞区燕尧路100号", phone : "025-83241955,025-83241881,025-83241195", location : point({latitude:32.117016089520305, longitude:118.86319310255513})})
+CREATE
+    (江苏省南京市玄武区月苑小区)-[:IN_LINE {cost:98.0}]->(玄武区转运中心),
+    (江苏省南京市玄武区月苑小区)<-[:OUT_LINE {cost:98.0}]-(玄武区转运中心)
+CREATE (江苏省南京市玄武区高楼门分部:AGENCY {bid: 25026, name: "江苏省南京市玄武区高楼门分部", address: "观音阁10号", phone : "13952012087,13952012087,13952012087", location : point({latitude:32.04803554410631, longitude:118.79190455263355})})
+CREATE
+    (江苏省南京市玄武区高楼门分部)-[:IN_LINE {cost:5.6}]->(玄武区转运中心),
+    (江苏省南京市玄武区高楼门分部)<-[:OUT_LINE {cost:5.6}]-(玄武区转运中心)
+CREATE (江苏省南京市钟山四部:AGENCY {bid: 25143, name: "江苏省南京市钟山四部", address: "江苏省南京市钟山门大街75号", phone : "13000000008", location : point({latitude:32.048400109936495, longitude:118.79799966130108})})
+CREATE
+    (江苏省南京市钟山四部)-[:IN_LINE {cost:0.3}]->(玄武区转运中心),
+    (江苏省南京市钟山四部)<-[:OUT_LINE {cost:0.3}]-(玄武区转运中心)
+CREATE (江苏省南京市钟山三部:AGENCY {bid: 25142, name: "江苏省南京市钟山三部", address: "江苏省南京市钟山门大街75号", phone : "13000000008", location : point({latitude:32.048400109936495, longitude:118.79799966130108})})
+CREATE
+    (江苏省南京市钟山三部)-[:IN_LINE {cost:0.3}]->(玄武区转运中心),
+    (江苏省南京市钟山三部)<-[:OUT_LINE {cost:0.3}]-(玄武区转运中心)
+CREATE (江苏省南京市玄武区太平门:AGENCY {bid: 25080, name: "江苏省南京市玄武区太平门", address: "栖霞区燕尧路100号", phone : "025-83241955,025-83241881,025-83241955", location : point({latitude:32.117016089520305, longitude:118.86319310255513})})
+CREATE
+    (江苏省南京市玄武区太平门)-[:IN_LINE {cost:98.0}]->(玄武区转运中心),
+    (江苏省南京市玄武区太平门)<-[:OUT_LINE {cost:98.0}]-(玄武区转运中心)
+CREATE (江苏省南京市玄武区进香河:AGENCY {bid: 25098, name: "江苏省南京市玄武区进香河", address: "观音阁10号", phone : "18521133265,13338315829,18695799166", location : point({latitude:32.04803554410631, longitude:118.79190455263355})})
+CREATE
+    (江苏省南京市玄武区进香河)-[:IN_LINE {cost:5.6}]->(玄武区转运中心),
+    (江苏省南京市玄武区进香河)<-[:OUT_LINE {cost:5.6}]-(玄武区转运中心)
+CREATE (江苏省南京市玄武区北苑:AGENCY {bid: 25068, name: "江苏省南京市玄武区北苑", address: "栖霞区燕尧路100号", phone : "025-58765331,025-83241881,025-83241955", location : point({latitude:32.117016089520305, longitude:118.86319310255513})})
+CREATE
+    (江苏省南京市玄武区北苑)-[:IN_LINE {cost:98.0}]->(玄武区转运中心),
+    (江苏省南京市玄武区北苑)<-[:OUT_LINE {cost:98.0}]-(玄武区转运中心)
+CREATE (江苏省南京市玄武区洪武路:AGENCY {bid: 25024, name: "江苏省南京市玄武区洪武路", address: "观音阁10号", phone : "18521133265", location : point({latitude:32.04803554410631, longitude:118.79190455263355})})
+CREATE
+    (江苏省南京市玄武区洪武路)-[:IN_LINE {cost:5.6}]->(玄武区转运中心),
+    (江苏省南京市玄武区洪武路)<-[:OUT_LINE {cost:5.6}]-(玄武区转运中心)
+CREATE (江苏省南京市玄武一部:AGENCY {bid: 25034, name: "江苏省南京市玄武一部", address: "珠江路675号(碧海温泉会所院内圆通速递)", phone : "025-58831535", location : point({latitude:32.045938636581084, longitude:118.8151199445638})})
+CREATE
+    (江苏省南京市玄武一部)-[:IN_LINE {cost:16.6}]->(玄武区转运中心),
+    (江苏省南京市玄武一部)<-[:OUT_LINE {cost:16.6}]-(玄武区转运中心)
+CREATE (江苏省南京市玄武区文景雅苑:AGENCY {bid: 25081, name: "江苏省南京市玄武区文景雅苑", address: "栖霞区燕尧路100号", phone : "025-83241955,025-58765331,025-83241881", location : point({latitude:32.117016089520305, longitude:118.86319310255513})})
+CREATE
+    (江苏省南京市玄武区文景雅苑)-[:IN_LINE {cost:98.0}]->(玄武区转运中心),
+    (江苏省南京市玄武区文景雅苑)<-[:OUT_LINE {cost:98.0}]-(玄武区转运中心)
+CREATE (江苏省南京市玄武区东方城:AGENCY {bid: 25075, name: "江苏省南京市玄武区东方城", address: "栖霞区燕尧路100号", phone : "025-58765331,025-83241955,025-83241195", location : point({latitude:32.117016089520305, longitude:118.86319310255513})})
+CREATE
+    (江苏省南京市玄武区东方城)-[:IN_LINE {cost:98.0}]->(玄武区转运中心),
+    (江苏省南京市玄武区东方城)<-[:OUT_LINE {cost:98.0}]-(玄武区转运中心)
+CREATE (江苏省南京市玄武区营苑:AGENCY {bid: 25071, name: "江苏省南京市玄武区营苑", address: "栖霞区燕尧路100号", phone : "025-58765331,025-83241955,025-83241881", location : point({latitude:32.117016089520305, longitude:118.86319310255513})})
+CREATE
+    (江苏省南京市玄武区营苑)-[:IN_LINE {cost:98.0}]->(玄武区转运中心),
+    (江苏省南京市玄武区营苑)<-[:OUT_LINE {cost:98.0}]-(玄武区转运中心)
+CREATE (江苏省南京市玄武区北京东路:AGENCY {bid: 25025, name: "江苏省南京市玄武区北京东路", address: "观音阁10号", phone : "18521133265,13338315829,18695799166", location : point({latitude:32.04803554410631, longitude:118.79190455263355})})
+CREATE
+    (江苏省南京市玄武区北京东路)-[:IN_LINE {cost:5.6}]->(玄武区转运中心),
+    (江苏省南京市玄武区北京东路)<-[:OUT_LINE {cost:5.6}]-(玄武区转运中心)
+CREATE (江苏省南京市钟山五部:AGENCY {bid: 25144, name: "江苏省南京市钟山五部", address: "江苏省南京市钟山门大街75号", phone : "13000000008", location : point({latitude:32.048400109936495, longitude:118.79799966130108})})
+CREATE
+    (江苏省南京市钟山五部)-[:IN_LINE {cost:0.3}]->(玄武区转运中心),
+    (江苏省南京市钟山五部)<-[:OUT_LINE {cost:0.3}]-(玄武区转运中心)
+CREATE (江苏省南京市新庄区徐庄二部:AGENCY {bid: 25135, name: "江苏省南京市新庄区徐庄二部", address: "栖霞区燕尧路100号", phone : "025-58765331,025-83241881,025-83241955", location : point({latitude:32.117016089520305, longitude:118.86319310255513})})
+CREATE
+    (江苏省南京市新庄区徐庄二部)-[:IN_LINE {cost:98.0}]->(玄武区转运中心),
+    (江苏省南京市新庄区徐庄二部)<-[:OUT_LINE {cost:98.0}]-(玄武区转运中心)
+CREATE (江苏省南京市钟山六部:AGENCY {bid: 25145, name: "江苏省南京市钟山六部", address: "江苏省南京市钟山门大街75号", phone : "13000000008", location : point({latitude:32.048400109936495, longitude:118.79799966130108})})
+CREATE
+    (江苏省南京市钟山六部)-[:IN_LINE {cost:0.3}]->(玄武区转运中心),
+    (江苏省南京市钟山六部)<-[:OUT_LINE {cost:0.3}]-(玄武区转运中心)
+CREATE (江苏省南京市钟山二部:AGENCY {bid: 25141, name: "江苏省南京市钟山二部", address: "江苏省南京市钟山门大街75号", phone : "13000000008", location : point({latitude:32.048400109936495, longitude:118.79799966130108})})
+CREATE
+    (江苏省南京市钟山二部)-[:IN_LINE {cost:0.3}]->(玄武区转运中心),
+    (江苏省南京市钟山二部)<-[:OUT_LINE {cost:0.3}]-(玄武区转运中心)
+CREATE (江苏省南京市玄武区后宰门:AGENCY {bid: 52074, name: "江苏省南京市玄武区后宰门", address: "栖霞区燕尧路100号", phone : "025-83241955,025-83241881,025-58765331", location : point({latitude:32.117016089520305, longitude:118.86319310255513})})
+CREATE
+    (江苏省南京市玄武区后宰门)-[:IN_LINE {cost:98.0}]->(玄武区转运中心),
+    (江苏省南京市玄武区后宰门)<-[:OUT_LINE {cost:98.0}]-(玄武区转运中心)
+CREATE (江苏省南京市玄武区珠江路:AGENCY {bid: 250043, name: "江苏省南京市玄武区珠江路", address: "南京市新街口街道", phone : "18695799166,18521133265", location : point({latitude:32.05241349576173, longitude:118.79093750495126})})
+CREATE
+    (江苏省南京市玄武区珠江路)-[:IN_LINE {cost:7.7}]->(玄武区转运中心),
+    (江苏省南京市玄武区珠江路)<-[:OUT_LINE {cost:7.7}]-(玄武区转运中心)
+CREATE (江苏省南京市新庄区:AGENCY {bid: 250040, name: "江苏省南京市新庄区", address: "栖霞区燕尧路100号", phone : "025-58765331,025-83241195,025-83241881", location : point({latitude:32.117016089520305, longitude:118.86319310255513})})
+CREATE
+    (江苏省南京市新庄区)-[:IN_LINE {cost:98.0}]->(玄武区转运中心),
+    (江苏省南京市新庄区)<-[:OUT_LINE {cost:98.0}]-(玄武区转运中心)
+CREATE (江苏省南京市钟山:AGENCY {bid: 250168, name: "江苏省南京市钟山", address: "江苏省南京市玄武区鸡鸣寺路7号", phone : "13000000009", location : point({latitude:32.05935027143296, longitude:118.79550899749054})})
+CREATE
+    (江苏省南京市钟山)-[:IN_LINE {cost:12.1}]->(玄武区转运中心),
+    (江苏省南京市钟山)<-[:OUT_LINE {cost:12.1}]-(玄武区转运中心)
+CREATE (江苏省南京市玄武区梅园:AGENCY {bid: 250041, name: "江苏省南京市玄武区梅园", address: "珠江路675号（碧海温泉会所院内圆通速递）", phone : "025-85610155,", location : point({latitude:32.045938636581084, longitude:118.8151199445638})})
+CREATE
+    (江苏省南京市玄武区梅园)-[:IN_LINE {cost:16.6}]->(玄武区转运中心),
+    (江苏省南京市玄武区梅园)<-[:OUT_LINE {cost:16.6}]-(玄武区转运中心)
+CREATE (江苏省南京市玄武区东南大学:AGENCY {bid: 25097, name: "江苏省南京市玄武区东南大学", address: "观音阁10号", phone : "18521133265,13338315829,18695799166", location : point({latitude:32.04803554410631, longitude:118.79190455263355})})
+CREATE
+    (江苏省南京市玄武区东南大学)-[:IN_LINE {cost:5.6}]->(玄武区转运中心),
+    (江苏省南京市玄武区东南大学)<-[:OUT_LINE {cost:5.6}]-(玄武区转运中心)
+CREATE (江苏省南京市玄武区火车站:AGENCY {bid: 25077, name: "江苏省南京市玄武区火车站", address: "栖霞区燕尧路100号", phone : "025-58765331,025-83241195,025-83241881", location : point({latitude:32.117016089520305, longitude:118.86319310255513})})
+CREATE
+    (江苏省南京市玄武区火车站)-[:IN_LINE {cost:98.0}]->(玄武区转运中心),
+    (江苏省南京市玄武区火车站)<-[:OUT_LINE {cost:98.0}]-(玄武区转运中心)
+CREATE (江苏省南京市玄武二部:AGENCY {bid: 25033, name: "江苏省南京市玄武二部", address: "珠江路675号(碧海温泉会所院内圆通速递)", phone : "025-58831535", location : point({latitude:32.045938636581084, longitude:118.8151199445638})})
+CREATE
+    (江苏省南京市玄武二部)-[:IN_LINE {cost:16.6}]->(玄武区转运中心),
+    (江苏省南京市玄武二部)<-[:OUT_LINE {cost:16.6}]-(玄武区转运中心)
+CREATE (江苏省南京市玄武区板仓街:AGENCY {bid: 25074, name: "江苏省南京市玄武区板仓街", address: "栖霞区燕尧路100号", phone : "025-83241955,025-58765331,025-83241195", location : point({latitude:32.117016089520305, longitude:118.86319310255513})})
+CREATE
+    (江苏省南京市玄武区板仓街)-[:IN_LINE {cost:98.0}]->(玄武区转运中心),
+    (江苏省南京市玄武区板仓街)<-[:OUT_LINE {cost:98.0}]-(玄武区转运中心)
+CREATE (江苏省南京市玄武区林业大学:AGENCY {bid: 25078, name: "江苏省南京市玄武区林业大学", address: "栖霞区燕尧路100号", phone : "025-58765331,025-83241881,025-83241955", location : point({latitude:32.117016089520305, longitude:118.86319310255513})})
+CREATE
+    (江苏省南京市玄武区林业大学)-[:IN_LINE {cost:98.0}]->(玄武区转运中心),
+    (江苏省南京市玄武区林业大学)<-[:OUT_LINE {cost:98.0}]-(玄武区转运中心)
+CREATE (江苏省南京市玄武区阳光嘉园:AGENCY {bid: 25070, name: "江苏省南京市玄武区阳光嘉园", address: "栖霞区燕尧路100号", phone : "025-58765331,025-83241955,025-83241195", location : point({latitude:32.117016089520305, longitude:118.86319310255513})})
+CREATE
+    (江苏省南京市玄武区阳光嘉园)-[:IN_LINE {cost:98.0}]->(玄武区转运中心),
+    (江苏省南京市玄武区阳光嘉园)<-[:OUT_LINE {cost:98.0}]-(玄武区转运中心)
+CREATE (江苏省南京市玄武区修贤苑:AGENCY {bid: 25069, name: "江苏省南京市玄武区修贤苑", address: "栖霞区燕尧路100号", phone : "025-58765331,025-83241955,025-58765331", location : point({latitude:32.117016089520305, longitude:118.86319310255513})})
+CREATE
+    (江苏省南京市玄武区修贤苑)-[:IN_LINE {cost:98.0}]->(玄武区转运中心),
+    (江苏省南京市玄武区修贤苑)<-[:OUT_LINE {cost:98.0}]-(玄武区转运中心)
+CREATE (江苏省南京市玄武区锁金村:AGENCY {bid: 25079, name: "江苏省南京市玄武区锁金村", address: "  栖霞区燕尧路100号  ", phone : "025-58765331,025-83241881,025-83241955", location : point({latitude:32.117016089520305, longitude:118.86319310255513})})
+CREATE
+    (江苏省南京市玄武区锁金村)-[:IN_LINE {cost:98.0}]->(玄武区转运中心),
+    (江苏省南京市玄武区锁金村)<-[:OUT_LINE {cost:98.0}]-(玄武区转运中心)
+CREATE (江苏省南京市新庄区徐庄一部:AGENCY {bid: 25134, name: "江苏省南京市新庄区徐庄一部", address: "栖霞区燕尧路100号", phone : "025-58765331,025-83241881,025-83241955", location : point({latitude:32.117016089520305, longitude:118.86319310255513})})
+CREATE
+    (江苏省南京市新庄区徐庄一部)-[:IN_LINE {cost:98.0}]->(玄武区转运中心),
+    (江苏省南京市新庄区徐庄一部)<-[:OUT_LINE {cost:98.0}]-(玄武区转运中心)
+CREATE (江苏省南京市玄武区孝陵卫童卫路分部:AGENCY {bid: 25138, name: "江苏省南京市玄武区孝陵卫童卫路分部", address: "江苏省南京市玄武区孝陵卫卫岗一号农大", phone : "null", location : point({latitude:32.037816726836766, longitude:118.84645670422954})})
+CREATE
+    (江苏省南京市玄武区孝陵卫童卫路分部)-[:IN_LINE {cost:47.5}]->(玄武区转运中心),
+    (江苏省南京市玄武区孝陵卫童卫路分部)<-[:OUT_LINE {cost:47.5}]-(玄武区转运中心)
+CREATE (江苏省南京市钟山一部:AGENCY {bid: 25140, name: "江苏省南京市钟山一部", address: "江苏省南京市钟山门大街75号", phone : "13000000008", location : point({latitude:32.048400109936495, longitude:118.79799966130108})})
+CREATE
+    (江苏省南京市钟山一部)-[:IN_LINE {cost:0.3}]->(玄武区转运中心),
+    (江苏省南京市钟山一部)<-[:OUT_LINE {cost:0.3}]-(玄武区转运中心)
+CREATE (江苏省南京市玄武区国展中心:AGENCY {bid: 25115, name: "江苏省南京市玄武区国展中心", address: "栖霞区燕尧路100号", phone : "025-58765331,025-83241881,025-83241955", location : point({latitude:32.117016089520305, longitude:118.86319310255513})})
+CREATE
+    (江苏省南京市玄武区国展中心)-[:IN_LINE {cost:98.0}]->(玄武区转运中心),
+    (江苏省南京市玄武区国展中心)<-[:OUT_LINE {cost:98.0}]-(玄武区转运中心)
+CREATE (江苏省南京市玄武区孝陵卫理工学院:AGENCY {bid: 25139, name: "江苏省南京市玄武区孝陵卫理工学院", address: "江苏省南京市玄武区孝陵卫200号理工大", phone : "null", location : point({latitude:32.0351204034528, longitude:118.85620021535682})})
+CREATE
+    (江苏省南京市玄武区孝陵卫理工学院)-[:IN_LINE {cost:57.1}]->(玄武区转运中心),
+    (江苏省南京市玄武区孝陵卫理工学院)<-[:OUT_LINE {cost:57.1}]-(玄武区转运中心)
+CREATE (江苏省南京市玄武区高楼门:AGENCY {bid: 250134, name: "江苏省南京市玄武区高楼门", address: "峨眉路14号", phone : "18521133271", location : point({latitude:32.06163686736354, longitude:118.78742283678956})})
+CREATE
+    (江苏省南京市玄武区高楼门)-[:IN_LINE {cost:17.5}]->(玄武区转运中心),
+    (江苏省南京市玄武区高楼门)<-[:OUT_LINE {cost:17.5}]-(玄武区转运中心)
+CREATE (江苏省南京市玄武区孝陵卫:AGENCY {bid: 250160, name: "江苏省南京市玄武区孝陵卫", address: "燕尧路100号", phone : "15895908326", location : point({latitude:32.117016089520305, longitude:118.86319310255513})})
+CREATE
+    (江苏省南京市玄武区孝陵卫)-[:IN_LINE {cost:98.0}]->(玄武区转运中心),
+    (江苏省南京市玄武区孝陵卫)<-[:OUT_LINE {cost:98.0}]-(玄武区转运中心)
+CREATE (江苏省南京市玄武区中山门大街:AGENCY {bid: 250161, name: "江苏省南京市玄武区中山门大街", address: "双拜岗路100号", phone : "18521132920", location : point({latitude:32.028807419089, longitude:118.87302403142401})})
+CREATE
+    (江苏省南京市玄武区中山门大街)-[:IN_LINE {cost:74.4}]->(玄武区转运中心),
+    (江苏省南京市玄武区中山门大街)<-[:OUT_LINE {cost:74.4}]-(玄武区转运中心)
+CREATE
+    (玄武区转运中心)-[:IN_LINE {cost:12.0}]->(南京市转运中心),
+    (玄武区转运中心)<-[:OUT_LINE {cost:12.0}]-(南京市转运中心)
+CREATE (小店区转运中心:TLT {bid: 90005, name: "小店区转运中心" , location : point({latitude:37.736865, longitude:112.565524})})
+CREATE (山西省太原市青龙:AGENCY {bid: 351068, name: "山西省太原市青龙", address: "长治路33号经典家园停车场内13号商铺", phone : "0351-2025888", location : point({latitude:37.83589608758359, longitude:112.56059258109424})})
+CREATE
+    (山西省太原市青龙)-[:IN_LINE {cost:110.3}]->(小店区转运中心),
+    (山西省太原市青龙)<-[:OUT_LINE {cost:110.3}]-(小店区转运中心)
+CREATE (山西省太原市长风街:AGENCY {bid: 351045, name: "山西省太原市长风街", address: "平阳路104号省农机公司院内", phone : "18636100730", location : point({latitude:37.809964384001226, longitude:112.55299317699505})})
+CREATE
+    (山西省太原市长风街)-[:IN_LINE {cost:82.1}]->(小店区转运中心),
+    (山西省太原市长风街)<-[:OUT_LINE {cost:82.1}]-(小店区转运中心)
+CREATE (山西省太原市并州南路:AGENCY {bid: 351079, name: "山西省太原市并州南路", address: "太原市小店区南十方街白云寺旁", phone : "15035795958,18379644481,18521180682", location : point({latitude:37.83443587925173, longitude:112.59547831188412})})
+CREATE
+    (山西省太原市并州南路)-[:IN_LINE {cost:111.8}]->(小店区转运中心),
+    (山西省太原市并州南路)<-[:OUT_LINE {cost:111.8}]-(小店区转运中心)
+CREATE (山西省太原市恒大绿洲:AGENCY {bid: 351004, name: "山西省太原市恒大绿洲", address: "红寺村", phone : "13333432315", location : point({latitude:37.7661760338314, longitude:112.56980341947563})})
+CREATE
+    (山西省太原市恒大绿洲)-[:IN_LINE {cost:32.8}]->(小店区转运中心),
+    (山西省太原市恒大绿洲)<-[:OUT_LINE {cost:32.8}]-(小店区转运中心)
+CREATE (山西省太原市经济开发区:AGENCY {bid: 351020, name: "山西省太原市经济开发区", address: "太原市小店区巩家堡小区南门圆通", phone : "18521180572", location : point({latitude:37.72269333966369, longitude:112.5733955760748})})
+CREATE
+    (山西省太原市经济开发区)-[:IN_LINE {cost:17.2}]->(小店区转运中心),
+    (山西省太原市经济开发区)<-[:OUT_LINE {cost:17.2}]-(小店区转运中心)
+CREATE (山西省太原市高新区:AGENCY {bid: 351005, name: "山西省太原市高新区", address: "体育南路139号紫园西门圆通快递", phone : "0351-7990764", location : point({latitude:37.77958266666263, longitude:112.5505087983771})})
+CREATE
+    (山西省太原市高新区)-[:IN_LINE {cost:49.4}]->(小店区转运中心),
+    (山西省太原市高新区)<-[:OUT_LINE {cost:49.4}]-(小店区转运中心)
+CREATE (山西省太原市经济开发区北格镇:AGENCY {bid: 351834, name: "山西省太原市经济开发区北格镇", address: "xibeigecun", phone : "15364511993", location : point({latitude:37.637041070001246, longitude:112.53873973693635})})
+CREATE
+    (山西省太原市经济开发区北格镇)-[:IN_LINE {cost:113.6}]->(小店区转运中心),
+    (山西省太原市经济开发区北格镇)<-[:OUT_LINE {cost:113.6}]-(小店区转运中心)
+CREATE (山西省太原市北营:AGENCY {bid: 351053, name: "山西省太原市北营", address: "黑坨村", phone : "18521184151,18521184151,18521184151", location : point({latitude:37.81417431036231, longitude:112.65546681324383})})
+CREATE
+    (山西省太原市北营)-[:IN_LINE {cost:116.9}]->(小店区转运中心),
+    (山西省太原市北营)<-[:OUT_LINE {cost:116.9}]-(小店区转运中心)
+CREATE (山西省太原市汾东:AGENCY {bid: 351022, name: "山西省太原市汾东", address: "李家庄南街四巷14号", phone : "17703462532", location : point({latitude:37.72998933901361, longitude:112.57002060239454})})
+CREATE
+    (山西省太原市汾东)-[:IN_LINE {cost:8.6}]->(小店区转运中心),
+    (山西省太原市汾东)<-[:OUT_LINE {cost:8.6}]-(小店区转运中心)
+CREATE (山西省太原市城南:AGENCY {bid: 351072, name: "山西省太原市城南", address: "西北格村前街7号", phone : "03512257373", location : point({latitude:37.637041070001246, longitude:112.53873973693635})})
+CREATE
+    (山西省太原市城南)-[:IN_LINE {cost:113.6}]->(小店区转运中心),
+    (山西省太原市城南)<-[:OUT_LINE {cost:113.6}]-(小店区转运中心)
+CREATE (山西省太原市南坪头:AGENCY {bid: 351021, name: "山西省太原市南坪头", address: "二许线南坪头村", phone : "18521879143", location : point({latitude:37.806413741267676, longitude:112.62656145978336})})
+CREATE
+    (山西省太原市南坪头)-[:IN_LINE {cost:94.2}]->(小店区转运中心),
+    (山西省太原市南坪头)<-[:OUT_LINE {cost:94.2}]-(小店区转运中心)
+CREATE (山西省太原市平阳景苑:AGENCY {bid: 351041, name: "山西省太原市平阳景苑", address: "104号农机公司第二家圆通", phone : "18521180607,13834077178,15003578586", location : point({latitude:37.81013227325846, longitude:112.55418276582093})})
+CREATE
+    (山西省太原市平阳景苑)-[:IN_LINE {cost:82.2}]->(小店区转运中心),
+    (山西省太原市平阳景苑)<-[:OUT_LINE {cost:82.2}]-(小店区转运中心)
+CREATE (山西省太原市坞城路:AGENCY {bid: 351059, name: "山西省太原市坞城路", address: "大吴村", phone : "03515668789", location : point({latitude:37.781976793692714, longitude:112.59011012584956})})
+CREATE
+    (山西省太原市坞城路)-[:IN_LINE {cost:54.7}]->(小店区转运中心),
+    (山西省太原市坞城路)<-[:OUT_LINE {cost:54.7}]-(小店区转运中心)
+CREATE (山西省太原市唐槐:AGENCY {bid: 351018, name: "山西省太原市唐槐", address: "西温庄乡后所营村瑞祥小巷155号", phone : "18521186637", location : point({latitude:37.71977410552165, longitude:112.61251318792453})})
+CREATE
+    (山西省太原市唐槐)-[:IN_LINE {cost:45.5}]->(小店区转运中心),
+    (山西省太原市唐槐)<-[:OUT_LINE {cost:45.5}]-(小店区转运中心)
+CREATE (山西省太原市小店区刘家堡乡:AGENCY {bid: 351824, name: "山西省太原市小店区刘家堡乡", address: "beige", phone : "15364511993", location : point({latitude:37.64740066217861, longitude:112.48180959211086})})
+CREATE
+    (山西省太原市小店区刘家堡乡)-[:IN_LINE {cost:123.9}]->(小店区转运中心),
+    (山西省太原市小店区刘家堡乡)<-[:OUT_LINE {cost:123.9}]-(小店区转运中心)
+CREATE (山西省太原市小店区西温庄乡:AGENCY {bid: 351825, name: "山西省太原市小店区西温庄乡", address: "西温庄乡", phone : "18521186637", location : point({latitude:37.724169218617256, longitude:112.62632014890934})})
+CREATE
+    (山西省太原市小店区西温庄乡)-[:IN_LINE {cost:55.4}]->(小店区转运中心),
+    (山西省太原市小店区西温庄乡)<-[:OUT_LINE {cost:55.4}]-(小店区转运中心)
+CREATE
+    (小店区转运中心)-[:IN_LINE {cost:149.4}]->(太原市转运中心),
+    (小店区转运中心)<-[:OUT_LINE {cost:149.4}]-(太原市转运中心)
+
+CREATE (中原区转运中心:TLT {bid: 90006, name: "中原区转运中心" , location : point({latitude:34.74828, longitude:113.612966})})
+CREATE (河南省郑州市郑上路:AGENCY {bid: 371067, name: "河南省郑州市郑上路", address: "中原西路西四环西北角", phone : "0371-55116757,0371-68014786", location : point({latitude:34.74753024533005, longitude:113.57428550005442})})
+CREATE
+    (河南省郑州市郑上路)-[:IN_LINE {cost:35.4}]->(中原区转运中心),
+    (河南省郑州市郑上路)<-[:OUT_LINE {cost:35.4}]-(中原区转运中心)
+CREATE (河南省郑州市颍河路:AGENCY {bid: 371086, name: "河南省郑州市颍河路", address: "航海西路与西三环交叉口向南300米路西中贸商务", phone : "19139415556", location : point({latitude:34.71593280680163, longitude:113.60398506929064})})
+CREATE
+    (河南省郑州市颍河路)-[:IN_LINE {cost:36.9}]->(中原区转运中心),
+    (河南省郑州市颍河路)<-[:OUT_LINE {cost:36.9}]-(中原区转运中心)
+CREATE (河南省郑州市中原北区:AGENCY {bid: 371051, name: "河南省郑州市中原北区", address: "电厂路丰元电力培训中心院内圆通仓库", phone : "021-60780950", location : point({latitude:34.79830293131257, longitude:113.60406734145886})})
+CREATE
+    (河南省郑州市中原北区)-[:IN_LINE {cost:56.3}]->(中原区转运中心),
+    (河南省郑州市中原北区)<-[:OUT_LINE {cost:56.3}]-(中原区转运中心)
+CREATE (河南省郑州市汝河路:AGENCY {bid: 371087, name: "河南省郑州市汝河路", address: "航海路西三环南100米路西化工物流园", phone : "18521116221,0395-3322927", location : point({latitude:34.72425482878614, longitude:113.59446557181496})})
+CREATE
+    (河南省郑州市汝河路)-[:IN_LINE {cost:31.6}]->(中原区转运中心),
+    (河南省郑州市汝河路)<-[:OUT_LINE {cost:31.6}]-(中原区转运中心)
+CREATE (河南省郑州市中原区锦艺城:AGENCY {bid: 371094, name: "河南省郑州市中原区锦艺城", address: "河南省郑州市中原区长椿路铁炉工业区", phone : "19817711116", location : point({latitude:34.77298091814093, longitude:113.54328892421985})})
+CREATE
+    (河南省郑州市中原区锦艺城)-[:IN_LINE {cost:69.4}]->(中原区转运中心),
+    (河南省郑州市中原区锦艺城)<-[:OUT_LINE {cost:69.4}]-(中原区转运中心)
+CREATE
+    (中原区转运中心)-[:IN_LINE {cost:11.5}]->(郑州市转运中心),
+    (中原区转运中心)<-[:OUT_LINE {cost:11.5}]-(郑州市转运中心)
+
+
+CREATE TEXT INDEX agency_index_bid IF NOT EXISTS FOR (n:AGENCY) ON (n.bid);
+CREATE TEXT INDEX agency_index_location IF NOT EXISTS FOR (n:AGENCY) ON (n.location);
+CREATE TEXT INDEX olt_index_bid IF NOT EXISTS FOR (n:OLT) ON (n.bid);
+CREATE TEXT INDEX tlt_index_bid IF NOT EXISTS FOR (n:TLT) ON (n.bid);

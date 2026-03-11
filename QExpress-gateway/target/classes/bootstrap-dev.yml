@@ -1,0 +1,105 @@
+spring:
+  cloud:
+    nacos:
+      username: ${project.nacos.username}
+      password: ${project.nacos.password}
+      server-addr: ${project.nacos.ip}:${project.nacos.port}
+      discovery:
+        namespace: e7b6ed71-9685-4a5b-bfe1-a0642f67a94e
+        ip: 192.168.150.1
+      config:
+        namespace: e7b6ed71-9685-4a5b-bfe1-a0642f67a94e
+    gateway:
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowed-origin-patterns: "*"
+            allowed-headers: "*"
+            allow-credentials: true
+            allowed-methods:
+              - GET
+              - POST
+              - DELETE
+              - PUT
+              - OPTION
+      discovery:
+        locator:
+          enabled: true #表明gateway开启服务注册和发现的功能，并且spring cloud gateway自动根据服务发现为每一个服务创建了一个router，这个router将以服务名开头的请求路径转发到对应的服务
+      routes:
+        - id: QExpress-ms-web-courier
+          uri: lb://QExpress-ms-web-courier
+          predicates:
+            - Path=/courier/**
+          filters:
+            - StripPrefix=1
+            - CourierToken
+            - AddRequestHeader=X-Request-From, QExpress-gateway
+        - id: QExpress-ms-web-customer
+          uri: lb://QExpress-ms-web-customer
+          predicates:
+            - Path=/customer/**
+          filters:
+            - StripPrefix=1
+            - CustomerToken
+            - AddRequestHeader=X-Request-From, QExpress-gateway
+        - id: QExpress-ms-web-driver
+          uri: lb://QExpress-ms-web-driver
+          predicates:
+            - Path=/driver/**
+          filters:
+            - StripPrefix=1
+            - DriverToken
+            - AddRequestHeader=X-Request-From, QExpress-gateway
+        - id: QExpress-ms-web-manager
+          uri: lb://QExpress-ms-web-manager
+          predicates:
+            - Path=/manager/**
+          filters:
+            - StripPrefix=1
+            - ManagerToken
+            - AddRequestHeader=X-Request-From, QExpress-gateway
+        - id: QExpress-ms-trade
+          uri: lb://QExpress-ms-trade
+          predicates:
+            - Path=/trade/notify/**
+          filters:
+            - StripPrefix=1
+            - AddRequestHeader=X-Request-From, QExpress-gateway
+
+qe:
+  noAuthPaths:
+    - /courier/login/account
+    - /courier/swagger-ui.html
+    - /courier/webjars/
+    - /courier/swagger-resources
+    - /courier/v2/api-docs
+    - /courier/doc.html
+    - /customer/user/login
+    - /customer/user/refresh
+    - /customer/swagger-ui.html
+    - /customer/webjars/
+    - /customer/swagger-resources
+    - /customer/v2/api-docs
+    - /customer/doc.html
+    - /driver/login/account
+    - /driver/swagger-ui.html
+    - /driver/webjars/
+    - /driver/swagger-resources
+    - /driver/v2/api-docs
+    - /driver/doc.html
+    - /manager/login
+    - /manager/webjars/
+    - /manager/swagger-resources
+    - /manager/v2/api-docs
+    - /manager/doc.html
+    - /manager/captcha
+  jwt:
+    public-key: ${qe.jwt.user-secret-key}
+
+itcast:
+  authority:
+    host: ${authority.host} #authority服务地址,根据实际情况更改
+    port: ${authority.port} #authority服务端口
+    timeout: ${authority.timeout} #http请求的超时时间
+    public-key-file: auth/pub.key
+    applicationId: ${authority.applicationId}

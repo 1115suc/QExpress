@@ -1,0 +1,31 @@
+server:
+  port: 18083
+  tomcat:
+    uri-encoding: UTF-8
+    threads:
+      max: 1000
+      min-spare: 30
+spring:
+  cloud:
+    nacos:
+      username: nacos
+      password: nacos
+      server-addr: 192.168.150.128:8848
+      discovery:
+        namespace: e7b6ed71-9685-4a5b-bfe1-a0642f67a94e
+        ip: 192.168.150.1
+      config:
+        namespace: e7b6ed71-9685-4a5b-bfe1-a0642f67a94e
+        shared-configs: #共享配置
+          - data-id: shared-spring-rabbitmq.yml
+            group: SHARED_GROUP
+            refresh: false
+          - data-id: shared-spring-eaglemap.yml
+            group: SHARED_GROUP
+            refresh: false
+          - data-id: shared-spring-neo4j.yml
+            group: SHARED_GROUP
+            refresh: false
+          - data-id: shared-spring-redis.yml
+            group: SHARED_GROUP
+            refresh: false

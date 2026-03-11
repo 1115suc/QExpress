@@ -18,6 +18,8 @@ import course.QExpress.ms.base.mapper.user.TruckDriverMapper;
 import course.QExpress.ms.base.service.truck.TransportTripsTruckDriverService;
 import course.QExpress.ms.base.service.truck.TruckTripsService;
 import course.QExpress.ms.base.service.user.TruckDriverService;
+import course.QExpress.transport.api.TransportLineFeign;
+import course.QExpress.transport.domain.TransportLineDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

@@ -1,0 +1,30 @@
+match p = (s:AGENCY) -[*..10]-> (e:AGENCY)
+where s.bid = 1001 and e.bid = 1004
+return p order by length(p) asc  skip 1 limit 1
+
+match p = shortestPath((s:AGENCY) -[*..10]-> (e:AGENCY))
+where s.bid = 1001 and e.bid = 1004
+return p
+
+
+match p = (s:AGENCY) -[*..6]-> (e:AGENCY)
+where s.bid = 1001 and e.bid = 1004
+return nodes(p), relationships(p)
+
+match p = (s:AGENCY) -[*..6]-> (e:AGENCY)
+where s.bid = 1001 and e.bid = 1004
+UNWIND nodes(p) as n
+return n.name as name
+
+
+match p = shortestPath((s:AGENCY) -[*..6]-> (e:AGENCY))
+where s.bid = 1001 and e.bid = 1004
+UNWIND relationships(p) as r
+UNWIND nodes(p) as n
+return n.name,n.bid, sum(r.cost)
+
+WITH point({longitude: 116.343847, latitude:40.060539}) AS myPoint
+MATCH (n:AGENCY)
+WITH point.distance(n.location, myPoint) AS dis, n
+WHERE dis < 10000
+RETURN n ORDER BY dis ASC LIMIT 1

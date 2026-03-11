@@ -1,0 +1,6 @@
+{"success":true,"message":null,"code":null,"data":[{"orgCode":"371067","orgName":"河南省郑州市郑上路","location":{"lng":113.58087821636909,"lat":34.75320202256765},"orgAddress":"中原西路西四环西北角","takePhone":"0371-55116757,0371-68014786","hotline":"0371-55116757,0371-68014786"},{"orgCode":"371086","orgName":"河南省郑州市颍河路","location":{"lng":113.61053531101264,"lat":34.72183366391818},"orgAddress":"航海西路与西三环交叉口向南300米路西中贸商务","takePhone":"19139415556","hotline":"037168014890"},{"orgCode":"371051","orgName":"河南省郑州市中原北区","location":{"lng":113.61059729409281,"lat":34.804198715481775},"orgAddress":"电厂路丰元电力培训中心院内圆通仓库","takePhone":"021-60780950","hotline":"18521111129"},{"orgCode":"371087","orgName":"河南省郑州市汝河路","location":{"lng":113.60105513364364,"lat":34.730012653662},"orgAddress":"航海路西三环南100米路西化工物流园","takePhone":"18521116221,0395-3322927","hotline":"0395-3322927"},{"orgCode":"371094","orgName":"河南省郑州市中原区锦艺城","location":{"lng":113.54973386189198,"lat":34.779093305985434},"orgAddress":"河南省郑州市中原区长椿路铁炉工业区","takePhone":"19817711116","hotline":"037163435598"}]}
+
+        String tltName = "中原区转运中心";
+        Long tltId = 90006L;
+        Double tltLon = 113.612966;
+        Double tltLat = 34.74828;

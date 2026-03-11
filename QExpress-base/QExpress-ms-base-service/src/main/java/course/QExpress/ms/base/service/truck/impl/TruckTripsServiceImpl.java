@@ -3,12 +3,16 @@ package course.QExpress.ms.base.service.truck.impl;
 import cn.hutool.core.collection.CollUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import course.QExpress.common.exception.QEException;
+import course.QExpress.common.util.ObjectUtil;
 import course.QExpress.ms.base.domain.constants.TruckConstant;
 import course.QExpress.ms.base.domain.truck.OrganIdsDto;
 import course.QExpress.ms.base.entity.truck.TruckTripsEntity;
 import course.QExpress.ms.base.mapper.truck.TruckTripsMapper;
 import course.QExpress.ms.base.service.truck.TransportTripsTruckDriverService;
 import course.QExpress.ms.base.service.truck.TruckTripsService;
+import course.QExpress.transport.api.TransportLineFeign;
+import course.QExpress.transport.domain.TransportLineDTO;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -60,7 +64,7 @@ public class TruckTripsServiceImpl extends ServiceImpl<TruckTripsMapper, TruckTr
         // 检查车次绑定关系
         Boolean remove = transportTripsTruckDriverService.canRemove(id, null, null);
         if (!remove) {
-            throw new SLException("该车次下存在绑定车辆，请先解除绑定后删除");
+            throw new QEException("该车次下存在绑定车辆，请先解除绑定后删除");
         }
 
         TruckTripsEntity truckTripsEntity = new TruckTripsEntity();
