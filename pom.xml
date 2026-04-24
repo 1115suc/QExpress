@@ -24,6 +24,7 @@
         <module>QExpress-ms-track</module>
         <module>QExpress-ms-sms</module>
         <module>QExpress-ms-search</module>
+        <module>QExpress-ms-oms</module>
     </modules>
     <packaging>pom</packaging>
 
