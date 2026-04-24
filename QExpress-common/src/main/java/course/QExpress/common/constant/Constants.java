@@ -14,6 +14,14 @@ public abstract class Constants {
         String DRIVER_JOB_LOCK_PREFIX = "DRIVER_JOB_LOCK_";
     }
 
+    public interface JwtClaimsConstant {
+
+        /**
+         * 用户id
+         */
+        String USER_ID = "userId";
+    }
+
     public interface GATEWAY{
         String USER_ID = "userId";
         String USERINFO = "userInfo";

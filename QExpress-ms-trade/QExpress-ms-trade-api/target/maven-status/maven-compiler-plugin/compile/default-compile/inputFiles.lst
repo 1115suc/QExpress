@@ -1,8 +1,0 @@
-D:\Develop\JavaProject\QExpress\QExpress-ms-trade\QExpress-ms-trade-api\src\main\java\course\QExpress\ms\trade\api\fallback\JsapiPayFeignFallbackFactory.java
-D:\Develop\JavaProject\QExpress\QExpress-ms-trade\QExpress-ms-trade-api\src\main\java\course\QExpress\ms\trade\api\fallback\NativePayFeignFallbackFactory.java
-D:\Develop\JavaProject\QExpress\QExpress-ms-trade\QExpress-ms-trade-api\src\main\java\course\QExpress\ms\trade\api\fallback\RefundRecordFeignFallbackFactory.java
-D:\Develop\JavaProject\QExpress\QExpress-ms-trade\QExpress-ms-trade-api\src\main\java\course\QExpress\ms\trade\api\fallback\TradingFeignFallbackFactory.java
-D:\Develop\JavaProject\QExpress\QExpress-ms-trade\QExpress-ms-trade-api\src\main\java\course\QExpress\ms\trade\api\JsapiPayFeign.java
-D:\Develop\JavaProject\QExpress\QExpress-ms-trade\QExpress-ms-trade-api\src\main\java\course\QExpress\ms\trade\api\NativePayFeign.java
-D:\Develop\JavaProject\QExpress\QExpress-ms-trade\QExpress-ms-trade-api\src\main\java\course\QExpress\ms\trade\api\RefundRecordFeign.java
-D:\Develop\JavaProject\QExpress\QExpress-ms-trade\QExpress-ms-trade-api\src\main\java\course\QExpress\ms\trade\api\TradingFeign.java

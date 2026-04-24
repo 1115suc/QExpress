@@ -5,15 +5,15 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>course.QExpress</groupId>
-        <artifactId>QExpress-ms-track</artifactId>
+        <artifactId>QExpress-ms-dispatch</artifactId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 
     <groupId>course.QExpress</groupId>
-    <artifactId>QExpress-ms-track-service</artifactId>
+    <artifactId>QExpress-ms-dispatch-service</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 
-    <description>车辆轨迹微服务</description>
+    <description>调度微服务</description>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
@@ -29,7 +29,12 @@
         </dependency>
         <dependency>
             <groupId>course.QExpress</groupId>
-            <artifactId>QExpress-ms-track-domain</artifactId>
+            <artifactId>QExpress-ms-base-api</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>course.QExpress</groupId>
+            <artifactId>QExpress-ms-courier-api</artifactId>
             <version>1.0.0-SNAPSHOT</version>
         </dependency>
         <dependency>
@@ -39,18 +44,12 @@
         </dependency>
         <dependency>
             <groupId>course.QExpress</groupId>
-            <artifactId>QExpress-transport-api</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>course.QExpress</groupId>
-            <artifactId>QExpress-ms-oms-api</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>course.QExpress</groupId>
             <artifactId>QExpress-mq</artifactId>
             <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
@@ -65,21 +64,24 @@
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-bootstrap</artifactId>
-        </dependency>
-        <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-mongodb</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.itheima.em</groupId>
-            <artifactId>eaglemap-spring-boot-starter</artifactId>
-            <version>${eaglemap.version}</version>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-loadbalancer</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.xuxueli</groupId>
+            <artifactId>xxl-job-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.redisson</groupId>
+            <artifactId>redisson</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-seata</artifactId>
         </dependency>
     </dependencies>
 
@@ -99,7 +101,7 @@
                 </executions>
                 <configuration>
                     <!--指定主类-->
-                    <mainClass>course.QExpress.TrackApplication</mainClass>
+                    <mainClass>course.QExpress.DispatchApplication</mainClass>
                 </configuration>
             </plugin>
         </plugins>

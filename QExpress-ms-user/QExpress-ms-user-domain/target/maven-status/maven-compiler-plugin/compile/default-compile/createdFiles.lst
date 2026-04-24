@@ -1,6 +1,0 @@
-course\QExpress\user\domain\dto\MemberDTO.class
-course\QExpress\user\domain\enums\MemberIdCardVerifyStatus.class
-course\QExpress\user\domain\enums\AddressBookType.class
-course\QExpress\user\domain\dto\MemberDTO$MemberDTOBuilder.class
-course\QExpress\user\domain\dto\AddressBookDTO.class
-course\QExpress\user\domain\enums\AddressBookShowStatus.class

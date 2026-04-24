@@ -1,0 +1,27 @@
+application:
+  version: v1.0
+logging:
+  config: classpath:logback-spring.xml
+spring:
+  application:
+    name: QExpress-ms-web-courier
+  profiles:
+    active: test
+  main:
+    allow-bean-definition-overriding: true
+  mvc:
+    pathmatch:
+      #解决异常：swagger Failed to start bean 'documentationPluginsBootstrapper'; nested exception is java.lang.NullPointerException
+      #因为Springfox使用的路径匹配是基于AntPathMatcher的，而Spring Boot 2.6.X使用的是PathPatternMatcher
+      matching-strategy: ant_path_matcher
+qe:
+  swagger:
+    package-path: course.QExpress.web.courier.controller
+    title: 青品速递 - 快递员端接口文档
+    description: 该服务用于快递员端
+    contact-name: QExpress-web-courier-service
+    contact-url: http://www.1115suc.com/
+    contact-email: 1115suc@gmail.com
+    version: ${application.version}
+
+

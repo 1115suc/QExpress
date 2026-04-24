@@ -1,9 +1,0 @@
-course\QExpress\transport\domain\TransportLineDTO.class
-course\QExpress\transport\domain\CostConfigurationDTO.class
-course\QExpress\transport\domain\DispatchConfigurationDTO.class
-course\QExpress\transport\enums\DispatchMethodEnum.class
-course\QExpress\transport\domain\OrganDTO.class
-course\QExpress\transport\domain\TransportLineSearchDTO.class
-course\QExpress\transport\domain\TransportLineNodeDTO.class
-course\QExpress\transport\domain\DispatchConfigurationDTO$DispatchConfigurationDTOBuilder.class
-course\QExpress\transport\domain\CostConfigurationDTO$CostConfigurationDTOBuilder.class

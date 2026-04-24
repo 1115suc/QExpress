@@ -1,0 +1,33 @@
+package course.QExpress.web.courier.controller;
+
+import course.QExpress.common.vo.R;
+import course.QExpress.web.courier.service.LoginService;
+import course.QExpress.web.courier.vo.login.AccountLoginVO;
+import course.QExpress.web.courier.vo.login.LoginVO;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import javax.annotation.Resource;
+
+@Slf4j
+@Api(tags = "登录相关接口")
+@RestController
+@RequestMapping("/login")
+public class LoginController {
+
+    @Resource
+    private LoginService loginService;
+
+    @ApiOperation(value = "账号登录", notes = "登录")
+    @PostMapping(value = "/account")
+    public R<LoginVO> accountLogin(@RequestBody AccountLoginVO accountLoginVO) {
+        log.info("account login accountLoginDTO : {}", accountLoginVO);
+
+        return loginService.accountLogin(accountLoginVO);
+    }
+}

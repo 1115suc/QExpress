@@ -5,15 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>course.QExpress</groupId>
-        <artifactId>QExpress-ms-track</artifactId>
+        <artifactId>QExpress-ms-web</artifactId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 
-    <groupId>course.QExpress</groupId>
-    <artifactId>QExpress-ms-track-service</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
-
-    <description>车辆轨迹微服务</description>
+    <artifactId>QExpress-ms-web-customer</artifactId>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
@@ -29,7 +25,7 @@
         </dependency>
         <dependency>
             <groupId>course.QExpress</groupId>
-            <artifactId>QExpress-ms-track-domain</artifactId>
+            <artifactId>QExpress-ms-base-api</artifactId>
             <version>1.0.0-SNAPSHOT</version>
         </dependency>
         <dependency>
@@ -39,18 +35,41 @@
         </dependency>
         <dependency>
             <groupId>course.QExpress</groupId>
-            <artifactId>QExpress-transport-api</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>course.QExpress</groupId>
             <artifactId>QExpress-ms-oms-api</artifactId>
             <version>1.0.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>course.QExpress</groupId>
-            <artifactId>QExpress-mq</artifactId>
+            <artifactId>QExpress-ms-user-api</artifactId>
             <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>course.QExpress</groupId>
+            <artifactId>QExpress-ms-carriage-api</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>course.QExpress</groupId>
+            <artifactId>QExpress-ms-transport-info-api</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>course.QExpress</groupId>
+            <artifactId>QExpress-ms-trade-api</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>course.QExpress</groupId>
+            <artifactId>QExpress-ms-track-api</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
         </dependency>
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
@@ -61,30 +80,53 @@
             <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-bootstrap</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-mongodb</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.itheima.em</groupId>
-            <artifactId>eaglemap-spring-boot-starter</artifactId>
-            <version>${eaglemap.version}</version>
-        </dependency>
-        <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-loadbalancer</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.google.zxing</groupId>
+            <artifactId>core</artifactId>
+            <version>3.3.3</version>
+        </dependency>
+
+        <!-- Jwt 生成token需要 Java11版本需要 低版本不需要-->
+        <dependency>
+            <groupId>javax.xml.bind</groupId>
+            <artifactId>jaxb-api</artifactId>
+            <version>2.3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.xml.bind</groupId>
+            <artifactId>jaxb-impl</artifactId>
+            <version>2.3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.xml.bind</groupId>
+            <artifactId>jaxb-core</artifactId>
+            <version>2.3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.activation</groupId>
+            <artifactId>activation</artifactId>
+            <version>1.1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-seata</artifactId>
+        </dependency>
+        <!-- Jwt 生成token需要 Java11版本需要 低版本不需要-->
     </dependencies>
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>11</source>
+                    <target>11</target>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
@@ -99,10 +141,9 @@
                 </executions>
                 <configuration>
                     <!--指定主类-->
-                    <mainClass>course.QExpress.TrackApplication</mainClass>
+                    <mainClass>course.QExpress.WebCustomerApplication</mainClass>
                 </configuration>
             </plugin>
         </plugins>
     </build>
-
 </project>

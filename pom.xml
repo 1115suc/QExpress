@@ -27,6 +27,8 @@
         <module>QExpress-ms-oms</module>
         <module>QExpress-ms-scope</module>
         <module>QExpress-ms-driver</module>
+        <module>QExpress-ms-dispatch</module>
+        <module>QExpress-ms-web</module>
     </modules>
     <packaging>pom</packaging>
 

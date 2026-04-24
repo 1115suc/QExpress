@@ -1,9 +1,0 @@
-course\QExpress\gateway\filter\CustomerTokenGatewayFilterFactory.class
-course\QExpress\gateway\properties\JwtProperties.class
-course\QExpress\gateway\filter\AuthFilter.class
-course\QExpress\gateway\filter\ManagerTokenGatewayFilterFactory.class
-course\QExpress\gateway\filter\TokenGatewayFilter.class
-course\QExpress\gateway\GatewayApplication.class
-course\QExpress\gateway\filter\DriverTokenGatewayFilterFactory.class
-course\QExpress\gateway\config\MyConfig.class
-course\QExpress\gateway\filter\CourierTokenGatewayFilterFactory.class
