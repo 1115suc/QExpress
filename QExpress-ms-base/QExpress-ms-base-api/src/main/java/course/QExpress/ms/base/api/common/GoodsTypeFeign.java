@@ -60,7 +60,8 @@ public interface GoodsTypeFeign {
             @RequestParam(name = "page") Integer page,
             @RequestParam(name = "pageSize") Integer pageSize,
             @RequestParam(name = "name", required = false) String name,
-            @RequestParam(name = "truckTypeId", required = false) Long truckTypeId);
+            @RequestParam(name = "truckTypeId", required = false) Long truckTypeId,
+            @RequestParam(name = "truckTypeName", required = false) String truckTypeName);
 
     /**
      * 更新货物类型信息
