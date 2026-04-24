@@ -24,7 +24,7 @@ public class CostConfigurationServiceImpl implements CostConfigurationService {
     /**
      * 成本配置 redis key
      */
-    private static final String SL_TRANSPORT_COST_REDIS_KEY = "SL_TRANSPORT_COST_CONFIGURATION";
+    private static final String QE_TRANSPORT_COST_REDIS_KEY = "SL_TRANSPORT_COST_CONFIGURATION";
 
     /**
      * 默认成本配置
@@ -44,7 +44,7 @@ public class CostConfigurationServiceImpl implements CostConfigurationService {
      */
     @Override
     public List<CostConfigurationDTO> findConfiguration() {
-        Map<Object, Object> entries = stringRedisTemplate.opsForHash().entries(SL_TRANSPORT_COST_REDIS_KEY);
+        Map<Object, Object> entries = stringRedisTemplate.opsForHash().entries(QE_TRANSPORT_COST_REDIS_KEY);
         if (ObjectUtil.isEmpty(entries)) {
             // 使用默认值
             entries = DEFAULT_COST;
@@ -63,7 +63,7 @@ public class CostConfigurationServiceImpl implements CostConfigurationService {
     @Override
     public void saveConfiguration(List<CostConfigurationDTO> dto) {
         Map<Object, Object> map = dto.stream().collect(Collectors.toMap(v -> v.getTransportLineType().toString(), v -> v.getCost().toString()));
-        stringRedisTemplate.opsForHash().putAll(SL_TRANSPORT_COST_REDIS_KEY, map);
+        stringRedisTemplate.opsForHash().putAll(QE_TRANSPORT_COST_REDIS_KEY, map);
     }
 
     /**
@@ -78,7 +78,7 @@ public class CostConfigurationServiceImpl implements CostConfigurationService {
             throw new QEException(ExceptionEnum.TRANSPORT_LINE_TYPE_ERROR);
         }
         // 查询redis
-        Object o = stringRedisTemplate.opsForHash().get(SL_TRANSPORT_COST_REDIS_KEY, type.toString());
+        Object o = stringRedisTemplate.opsForHash().get(QE_TRANSPORT_COST_REDIS_KEY, type.toString());
         if (ObjectUtil.isNotEmpty(o)) {
             return Convert.toDouble(o);
         }

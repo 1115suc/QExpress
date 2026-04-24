@@ -101,7 +101,7 @@ public class OmsServiceImpl implements OmsService {
     @Resource
     private TransportOrderFeign transportOrderFeign;
 
-    @Value("${sl.wechat.enterpriseId}")
+    @Value("${qe.wechat.enterpriseId}")
     private Long enterpriseId;
 
     @Resource

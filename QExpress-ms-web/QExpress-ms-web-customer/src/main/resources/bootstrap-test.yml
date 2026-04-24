@@ -19,10 +19,10 @@ spring:
           - data-id: shared-spring-seata.yml
             group: SHARED_GROUP
             refresh: false
-sl:
+qe:
   jwt:
-    user-secret-key: ${sl.jwt.user-secret-key}
-    user-ttl: ${sl.jwt.user-ttl}
+    user-secret-key: ${qe.jwt.user-secret-key}
+    user-ttl: ${qe.jwt.user-ttl}
   wechat:
-    appid: ${sl.wechat.appid}
-    secret: ${sl.wechat.secret}
+    appid: ${qe.wechat.appid}
+    secret: ${qe.wechat.secret}

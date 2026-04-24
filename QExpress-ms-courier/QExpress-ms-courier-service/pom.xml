@@ -32,11 +32,11 @@
             <artifactId>QExpress-ms-base-api</artifactId>
             <version>1.0.0-SNAPSHOT</version>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>com.sl-express.ms.service-scope</groupId>-->
-<!--            <artifactId>sl-express-ms-service-scope-api</artifactId>-->
-<!--            <version>${sl-express-ms-service-scope-api.version}</version>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>course.QExpress</groupId>
+            <artifactId>QExpress-ms-scope-api</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
         <dependency>
             <groupId>course.QExpress</groupId>
             <artifactId>QExpress-ms-courier-domain</artifactId>
@@ -47,16 +47,16 @@
             <artifactId>QExpress-mq</artifactId>
             <version>1.0.0-SNAPSHOT</version>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>com.sl-express.ms.oms</groupId>-->
-<!--            <artifactId>sl-express-ms-oms-api</artifactId>-->
-<!--            <version>${sl-express-ms-oms-api.version}</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>com.sl-express.ms.work</groupId>-->
-<!--            <artifactId>sl-express-ms-work-api</artifactId>-->
-<!--            <version>${sl-express-ms-work-api.version}</version>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>course.QExpress</groupId>
+            <artifactId>QExpress-ms-oms-api</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>course.QExpress</groupId>
+            <artifactId>QExpress-ms-work-api</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>

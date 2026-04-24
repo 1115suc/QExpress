@@ -45,9 +45,9 @@ public class DispatchJob {
     private TruckPlanFeign truckPlanFeign;
     @Resource
     private MQFeign mqFeign;
-    @Value("${sl.volume.ratio:0.95}")
+    @Value("${qe.volume.ratio:0.95}")
     private Double volumeRatio;
-    @Value("${sl.weight.ratio:0.95}")
+    @Value("${qe.weight.ratio:0.95}")
     private Double weightRatio;
     /**
      * 分片广播方式处理运单，生成运输任务

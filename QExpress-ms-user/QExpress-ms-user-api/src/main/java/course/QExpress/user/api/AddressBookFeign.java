@@ -7,7 +7,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 import springfox.documentation.annotations.ApiIgnore;
 
-@FeignClient(name = "sl-express-ms-user", path = "addressBook", contextId = "AddressBook")
+@FeignClient(name = "QExpress-ms-user", path = "addressBook", contextId = "AddressBook")
 @ApiIgnore
 public interface AddressBookFeign {
 

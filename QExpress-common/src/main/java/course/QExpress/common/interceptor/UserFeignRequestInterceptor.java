@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;
 
 /**
- * 如果需要通过Feign将用户信息向下游微服务传递，需要在配置文件中设置：sl.feign.user = true
+ * 如果需要通过Feign将用户信息向下游微服务传递，需要在配置文件中设置：qe.feign.user = true
  */
 @Component
 @ConditionalOnProperty(prefix = "qe.feign", value = "user")

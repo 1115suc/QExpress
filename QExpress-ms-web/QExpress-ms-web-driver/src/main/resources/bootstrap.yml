@@ -4,7 +4,7 @@ logging:
   config: classpath:logback-spring.xml
 spring:
   application:
-    name: sl-express-ms-web-driver
+    name: QExpress-ms-web-driver
   profiles:
     active: test
   main:

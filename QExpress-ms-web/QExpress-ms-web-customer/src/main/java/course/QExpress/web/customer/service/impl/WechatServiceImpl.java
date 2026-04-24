@@ -26,10 +26,10 @@ public class WechatServiceImpl implements WechatService {
     // 获取手机号
     private static final String PHONE_REQUEST_URL = "https://api.weixin.qq.com/wxa/business/getuserphonenumber?access_token=";
 
-    @Value("${sl.wechat.appid}")
+    @Value("${qe.wechat.appid}")
     private String appId;
 
-    @Value("${sl.wechat.secret}")
+    @Value("${qe.wechat.secret}")
     private String secret;
 
     /**

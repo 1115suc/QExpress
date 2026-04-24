@@ -35,6 +35,6 @@ spring:
 #      transport:
 #        dashboard: 127.0.0.1:8080
 #        client-ip: 127.0.0.1
-sl:
+qe:
   id:
     leaf: ${qe.id.leaf} #指定美团leaf服务地址

@@ -8,7 +8,7 @@ import springfox.documentation.annotations.ApiIgnore;
 
 import java.util.List;
 
-@FeignClient(name = "sl-express-ms-courier", contextId = "courier", path = "couriers")
+@FeignClient(name = "QExpress-ms-courier", contextId = "courier", path = "couriers")
 @ApiIgnore
 public interface CourierFeign {
 

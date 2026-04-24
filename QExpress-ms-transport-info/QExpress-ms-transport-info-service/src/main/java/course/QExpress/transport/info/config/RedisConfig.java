@@ -26,7 +26,7 @@ public class RedisConfig {
     @Value("${redis.ttl:1}")
     private Integer redisTtl;
 
-    public static final String CHANNEL_TOPIC = "sl-express-ms-transport-info-caffeine";
+    public static final String CHANNEL_TOPIC = "QExpress-ms-transport-info-caffeine";
 
     @Bean
     public RedisMessageListenerContainer container(RedisConnectionFactory connectionFactory,

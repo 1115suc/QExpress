@@ -37,36 +37,36 @@
             <artifactId>QExpress-ms-base-api</artifactId>
             <version>1.0.0-SNAPSHOT</version>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>com.sl-express.ms.oms</groupId>-->
-<!--            <artifactId>sl-express-ms-oms-api</artifactId>-->
-<!--            <version>1.0-SNAPSHOT</version>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>course.QExpress</groupId>
+            <artifactId>QExpress-ms-oms-api</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
         <dependency>
             <groupId>course.QExpress</groupId>
             <artifactId>QExpress-mq</artifactId>
             <version>1.0.0-SNAPSHOT</version>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>com.sl-express.ms.driver</groupId>-->
-<!--            <artifactId>sl-express-ms-driver-api</artifactId>-->
-<!--            <version>1.0-SNAPSHOT</version>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>course.QExpress</groupId>
+            <artifactId>QExpress-ms-driver-api</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
         <dependency>
             <groupId>course.QExpress</groupId>
             <artifactId>QExpress-transport-api</artifactId>
             <version>1.0.0-SNAPSHOT</version>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>com.sl-express.ms.tarck</groupId>-->
-<!--            <artifactId>sl-express-ms-track-api</artifactId>-->
-<!--            <version>${sl-express-ms-track-api.version}</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>com.sl-express.ms.search</groupId>-->
-<!--            <artifactId>sl-express-ms-search-api</artifactId>-->
-<!--            <version>${sl-express-ms-search-api.version}</version>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>course.QExpress</groupId>
+            <artifactId>QExpress-ms-track-api</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>course.QExpress</groupId>
+            <artifactId>QExpress-ms-search-api</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>

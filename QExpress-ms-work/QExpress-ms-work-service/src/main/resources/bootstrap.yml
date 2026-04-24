@@ -3,7 +3,7 @@ application:
 logging:
   config: classpath:logback-spring.xml
 #  level:
-#    com.sl: debug
+#    com.qe: debug
 spring:
   main:
     allow-circular-references: true #允许bean循环依赖

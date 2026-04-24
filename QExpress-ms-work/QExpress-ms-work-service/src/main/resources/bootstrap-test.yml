@@ -31,6 +31,6 @@ spring:
           - data-id: shared-spring-mybatis-plus.yml
             group: SHARED_GROUP
             refresh: false
-sl:
+qe:
   id:
     leaf: ${qe.id.leaf} #指定美团leaf服务地址

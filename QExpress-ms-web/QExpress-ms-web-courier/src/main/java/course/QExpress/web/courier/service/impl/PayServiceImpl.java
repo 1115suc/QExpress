@@ -29,9 +29,9 @@ public class PayServiceImpl implements PayService {
     private TradingFeign tradingFeign;
     @Resource
     private OrderFeign orderFeign;
-    @Value("${sl.wechat.enterpriseId}")
+    @Value("${qe.wechat.enterpriseId}")
     private Long wechatEnterpriseId;
-    @Value("${sl.ali.enterpriseId}")
+    @Value("${qe.ali.enterpriseId}")
     private Long aliEnterpriseId;
 
     /**

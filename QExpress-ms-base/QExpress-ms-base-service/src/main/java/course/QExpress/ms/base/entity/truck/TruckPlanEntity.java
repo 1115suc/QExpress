@@ -47,7 +47,6 @@ public class TruckPlanEntity extends BaseEntity {
 
     /**
      * 状态
-     * @see com.sl.ms.base.domain.enums.StatusEnum
      */
     private Integer status;
 
