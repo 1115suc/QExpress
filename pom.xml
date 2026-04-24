@@ -25,6 +25,8 @@
         <module>QExpress-ms-sms</module>
         <module>QExpress-ms-search</module>
         <module>QExpress-ms-oms</module>
+        <module>QExpress-ms-scope</module>
+        <module>QExpress-ms-driver</module>
     </modules>
     <packaging>pom</packaging>
 

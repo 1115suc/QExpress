@@ -50,4 +50,14 @@ public interface AreaFeign {
      */
     @GetMapping("/batch")
     public List<AreaDto> findBatch(@RequestParam("ids") List<Long> ids);
+
+    /**
+     * 获取行政区域信息列表
+     *
+     * @param parentId 父级id
+     * @return 信息列表
+     */
+    @GetMapping
+    List<AreaDto> findAll(@RequestParam(value = "parentId", required = false) Long parentId, @RequestParam(value = "ids", required = false) List<Long> ids);
+
 }

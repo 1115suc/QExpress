@@ -42,11 +42,11 @@
             <artifactId>QExpress-ms-base-api</artifactId>
             <version>1.0.0-SNAPSHOT</version>
         </dependency>
-       <!-- <dependency>
-            <groupId>com.sl-express.ms.service-scope</groupId>
-            <artifactId>sl-express-ms-service-scope-api</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>-->
+        <dependency>
+            <groupId>course.QExpress</groupId>
+            <artifactId>QExpress-ms-scope-api</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
         <dependency>
             <groupId>course.QExpress</groupId>
             <artifactId>QExpress-ms-carriage-api</artifactId>
@@ -54,7 +54,7 @@
         </dependency>
         <dependency>
             <groupId>course.QExpress</groupId>
-            <artifactId>QExpress-transport-api</artifactId>
+            <artifactId>QExpress-ms-trade-api</artifactId>
             <version>1.0.0-SNAPSHOT</version>
         </dependency>
         <dependency>

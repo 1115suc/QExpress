@@ -1,0 +1,28 @@
+package course.QExpress.oms.service;
+
+import com.baomidou.mybatisplus.extension.service.IService;
+import course.QExpress.oms.entity.OrderEntity;
+import course.QExpress.oms.domain.dto.MailingSaveDTO;
+import course.QExpress.oms.domain.dto.OrderCarriageDTO;
+import course.QExpress.oms.domain.dto.OrderDTO;
+
+/**
+ * 订单状态  服务类
+ */
+public interface OrderService extends IService<OrderEntity> {
+
+    /**
+     * 下单
+     * @param mailingSaveDTO 下单信息
+     * @return 下单成功信息
+     * @throws Exception
+     */
+    OrderDTO mailingSave(MailingSaveDTO mailingSaveDTO) throws Exception;
+
+    /**
+     * 预估总价
+     * @param mailingSaveDTO 下单信息
+     * @return 运费预估信息
+     */
+    OrderCarriageDTO totalPrice(MailingSaveDTO mailingSaveDTO);
+}

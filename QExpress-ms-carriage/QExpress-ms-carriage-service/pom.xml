@@ -91,7 +91,7 @@
                 </executions>
                 <configuration>
                     <!--指定主类-->
-                    <mainClass>course.QExpress.carriage.CarriageApplication</mainClass>
+                    <mainClass>course.QExpress.CarriageApplication</mainClass>
                 </configuration>
             </plugin>
         </plugins>

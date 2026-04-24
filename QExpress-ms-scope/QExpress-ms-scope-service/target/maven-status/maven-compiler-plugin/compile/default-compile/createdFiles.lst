@@ -1,0 +1,7 @@
+course\QExpress\scope\service\impl\ScopeServiceImpl.class
+course\QExpress\ServiceScopeApplication.class
+course\QExpress\scope\util\EntityUtils.class
+course\QExpress\scope\controller\ScopeController.class
+course\QExpress\scope\entity\ServiceScopeEntity.class
+course\QExpress\scope\enums\ServiceTypeEnum.class
+course\QExpress\scope\service\ScopeService.class
