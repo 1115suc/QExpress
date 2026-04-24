@@ -1,0 +1,21 @@
+project:
+  nacos:
+    username: nacos
+    password: nacos
+    ip: 192.168.150.128
+    port: 8848
+
+authority:
+  host: 192.168.150.128
+  port: 8764
+  timeout: 10000
+  applicationId: 981194468570960001
+
+role:
+  manager: 986227712144197857,989278284569131905,996045142395786081,996045927523359809
+  courier: 989559057641637825
+  driver: 989559028277315009
+
+qe:
+  jwt:
+    user-secret-key: qe

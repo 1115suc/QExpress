@@ -1,0 +1,7 @@
+#权限系统
+itcast:
+  authority:
+    host: 192.168.150.101 #authority服务地址,根据实际情况更改
+    port: 8764 #authority服务端口
+    timeout: 20000 #http请求的超时时间
+    applicationId: ${authority.applicationId:1}

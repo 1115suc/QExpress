@@ -1,0 +1,14 @@
+seata:
+  registry:
+    type: nacos
+    nacos:
+      server-addr: 192.168.150.101:8848
+      namespace: ecae68ba-7b43-4473-a980-4ddeb6157bdc
+      group: DEFAULT_GROUP
+      application: seata-server
+      username: nacos
+      password: nacos
+  tx-service-group: sl-seata # 事务组名称
+  service:
+    vgroup-mapping: # 事务组与cluster的映射关系
+      sl-seata: default

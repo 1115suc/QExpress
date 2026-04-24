@@ -1,0 +1,44 @@
+spring:
+  cloud:
+    sentinel:
+      transport:
+        dashboard: ${sl.sentinel.transport.dashboard} #dashboard地址
+        client-ip: ${sl.sentinel.transport.client-ip} #客户端ip
+        port: ${sl.sentinel.transport.port} #客户端端口
+      datasource:
+        flow: #流量控制
+          nacos:
+            server-addr: ${spring.cloud.nacos.server-addr} # nacos地址
+            namespace: ${spring.cloud.nacos.config.namespace}
+            dataId: ${spring.application.name}-flow-rules
+            groupId: SENTINEL_GROUP
+            # 规则类型: com.alibaba.cloud.sentinel.datasource.RuleType 对应到dashboard的规则类型
+            rule-type: flow
+        degrade: #熔断控制
+          nacos:
+            server-addr: ${spring.cloud.nacos.server-addr}
+            namespace: ${spring.cloud.nacos.config.namespace}
+            dataId: ${spring.application.name}-degrade-rules
+            groupId: SENTINEL_GROUP
+            rule-type: degrade
+        system: #系统规则
+          nacos:
+            server-addr: ${spring.cloud.nacos.server-addr}
+            namespace: ${spring.cloud.nacos.config.namespace}
+            dataId: ${spring.application.name}-system-rules
+            groupId: SENTINEL_GROUP
+            rule-type: system
+        authority: #授权规则
+          nacos:
+            server-addr: ${spring.cloud.nacos.server-addr}
+            namespace: ${spring.cloud.nacos.config.namespace}
+            dataId: ${spring.application.name}-authority-rules
+            groupId: SENTINEL_GROUP
+            rule-type: authority
+        param-flow: #热点规则
+          nacos:
+            server-addr: ${spring.cloud.nacos.server-addr}
+            namespace: ${spring.cloud.nacos.config.namespace}
+            dataId: ${spring.application.name}-param-flow-rules
+            groupId: SENTINEL_GROUP
+            rule-type: param-flow

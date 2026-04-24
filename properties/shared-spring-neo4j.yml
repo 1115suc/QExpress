@@ -1,0 +1,9 @@
+spring:
+  data:
+    neo4j:
+      database: ${neo4j.database}
+  neo4j:
+    authentication:
+      username: ${neo4j.username}
+      password: ${neo4j.password}
+    uri: ${neo4j.uri}

@@ -1,0 +1,12 @@
+course\QExpress\ms\trade\api\fallback\TradingFeignFallbackFactory.class
+course\QExpress\ms\trade\api\JsapiPayFeign.class
+course\QExpress\ms\trade\api\fallback\JsapiPayFeignFallbackFactory$1.class
+course\QExpress\ms\trade\api\fallback\RefundRecordFeignFallbackFactory.class
+course\QExpress\ms\trade\api\fallback\TradingFeignFallbackFactory$1.class
+course\QExpress\ms\trade\api\NativePayFeign.class
+course\QExpress\ms\trade\api\fallback\NativePayFeignFallbackFactory$1.class
+course\QExpress\ms\trade\api\RefundRecordFeign.class
+course\QExpress\ms\trade\api\fallback\NativePayFeignFallbackFactory.class
+course\QExpress\ms\trade\api\fallback\RefundRecordFeignFallbackFactory$1.class
+course\QExpress\ms\trade\api\fallback\JsapiPayFeignFallbackFactory.class
+course\QExpress\ms\trade\api\TradingFeign.class

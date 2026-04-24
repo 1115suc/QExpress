@@ -1,0 +1,8 @@
+course\QExpress\carriage\enums\CarriageExceptionEnum.class
+course\QExpress\carriage\service\impl\CarriageServiceImpl.class
+course\QExpress\carriage\service\CarriageService.class
+course\QExpress\carriage\utils\CarriageUtils.class
+course\QExpress\carriage\mapper\CarriageMapper.class
+course\QExpress\carriage\controller\CarriageController.class
+course\QExpress\carriage\CarriageApplication.class
+course\QExpress\carriage\entity\CarriageEntity.class

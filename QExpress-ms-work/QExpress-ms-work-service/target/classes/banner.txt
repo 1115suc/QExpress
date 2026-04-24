@@ -1,0 +1,7 @@
+   _     _     _  ______
+ /' \  /' \  /' \/\  ___\                       ${spring.application.name} ${application.version}
+/\_, \/\_, \/\_, \ \ \__/     ___   _ __        Port: ${server.port}
+\/_/\ \/_/\ \/_/\ \ \___``\  /'___\/\`'__\      Pid: ${pid}  Profile(s): ${AnsiColor.GREEN}${spring.profiles.active}${AnsiColor.DEFAULT}
+   \ \ \ \ \ \ \ \ \/\ \L\ \/\ \__/\ \ \/
+    \ \_\ \ \_\ \ \_\ \____/\ \____\\ \_\
+     \/_/  \/_/  \/_/\/___/  \/____/ \/_/

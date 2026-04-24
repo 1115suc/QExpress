@@ -1,0 +1,27 @@
+application:
+  version: v1.0
+logging:
+  config: classpath:logback-spring.xml
+spring:
+  application:
+    name: QExpress-transport
+  main:
+    allow-circular-references: true #允许bean循环依赖
+  profiles:
+    active: local,dev
+  mvc:
+    pathmatch:
+      #解决异常：swagger Failed to start bean 'documentationPluginsBootstrapper'; nested exception is java.lang.NullPointerException
+      #因为Springfox使用的路径匹配是基于AntPathMatcher的，而Spring Boot 2.6.X使用的是PathPatternMatcher
+      matching-strategy: ant_path_matcher
+qe:
+  mq:
+    enable: true #开启MQ，可以注入MQService使用，但是必须保证数据库有sl_fail_msg表
+  swagger:
+    package-path: course.QExpress.transport.controller
+    title: 青品速递 - 基础微服务接口文档
+    description: 该微服务完成网点、二级转运中心、一级转运中心的路线计算服务。
+    contact-name: QExpress-transport-service
+    contact-url: http://www.1115suc.com/
+    contact-email: 1115suc@gmail.com
+    version: ${application.version}

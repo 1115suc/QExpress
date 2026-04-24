@@ -13,9 +13,17 @@
         <module>QExpress-common</module>
         <module>QExpress-gateway</module>
         <module>QExpress-mq</module>
-        <module>QExpress-trade</module>
-        <module>QExpress-base</module>
-        <module>QExpress-transport</module>
+        <module>QExpress-ms-trade</module>
+        <module>QExpress-ms-base</module>
+        <module>QExpress-ms-transport</module>
+        <module>QExpress-ms-carriage</module>
+        <module>QExpress-ms-courier</module>
+        <module>QExpress-ms-work</module>
+        <module>QExpress-ms-user</module>
+        <module>QExpress-ms-transport-info</module>
+        <module>QExpress-ms-track</module>
+        <module>QExpress-ms-sms</module>
+        <module>QExpress-ms-search</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -35,6 +43,7 @@
         <itcast-auth.version>1.0.8</itcast-auth.version>
         <aspectj.version>1.9.7</aspectj.version>
         <eaglemap.version>1.0</eaglemap.version>
+        <elasticsearch.version>7.17.5</elasticsearch.version>
         <hikaricp.version>4.0.3</hikaricp.version>
         <caffeine.version>3.1.1</caffeine.version>
         <aliyun.sdk.oss>3.10.2</aliyun.sdk.oss>

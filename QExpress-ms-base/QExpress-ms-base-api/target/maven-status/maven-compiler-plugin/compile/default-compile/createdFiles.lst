@@ -1,0 +1,14 @@
+course\QExpress\ms\base\api\common\WorkPatternFeign.class
+course\QExpress\ms\base\api\truck\TruckFeign.class
+course\QExpress\ms\base\api\common\MessageFeign.class
+course\QExpress\ms\base\api\truck\TruckLicenseFeign.class
+course\QExpress\ms\base\api\common\GoodsTypeFeign.class
+course\QExpress\ms\base\api\common\AuthFeign.class
+course\QExpress\ms\base\api\common\AreaFeign.class
+course\QExpress\ms\base\api\truck\TruckTypeFeign.class
+course\QExpress\ms\base\api\common\MQFeign.class
+course\QExpress\ms\base\api\truck\TruckReturnRegisterFeign.class
+course\QExpress\ms\base\api\trips\TripsFeign.class
+course\QExpress\ms\base\api\user\DriverFeign.class
+course\QExpress\ms\base\api\common\WorkSchedulingFeign.class
+course\QExpress\ms\base\api\truck\TruckPlanFeign.class

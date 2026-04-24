@@ -1,0 +1,5 @@
+course\QExpress\carriage\domain\dto\CarriageDTO.class
+course\QExpress\carriage\domain\dto\WaybillDTO.class
+course\QExpress\carriage\domain\dto\WaybillDTO$WaybillDTOBuilder.class
+course\QExpress\carriage\domain\enums\EconomicRegionEnum.class
+course\QExpress\carriage\domain\constant\CarriageConstant.class

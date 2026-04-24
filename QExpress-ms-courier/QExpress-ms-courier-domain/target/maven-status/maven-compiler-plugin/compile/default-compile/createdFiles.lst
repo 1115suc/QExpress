@@ -1,0 +1,6 @@
+course\QExpress\courier\domain\dto\TaskPickupDispatchDTO.class
+course\QExpress\courier\domain\enums\PickupDispatchTaskType.class
+course\QExpress\courier\domain\dto\CourierScopeDto.class
+course\QExpress\courier\domain\enums\PickupDispatchTaskSignStatus.class
+course\QExpress\courier\domain\enums\PickupDispatchTaskStatus.class
+course\QExpress\courier\domain\enums\PickupDispatchTaskAssignedStatus.class
