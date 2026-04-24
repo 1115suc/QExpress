@@ -26,3 +26,7 @@ replay_pid*
 .idea
 */src/main/resources/bootstrap-local.yml
 /static/properties/
+
+target/
+*/target/
+**/target/
