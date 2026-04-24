@@ -1,5 +1,0 @@
-spring:
-  redis: #redis的配置
-    port: ${redis.port}
-    host: ${redis.host}
-    password: ${redis.password}
